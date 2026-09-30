@@ -15,13 +15,8 @@ import {
 const { width } = Dimensions.get('window');
 
 // ============================================================================
-// 🛠️ DATA DINAMIS / BISA DIBONGKAR PASANG
+// 🛠️ DATA DINAMIS PENGUMUMAN & MENU AKSES CEPAT
 // ============================================================================
-
-const USER_DATA = {
-  name: 'Pak Taufiq',
-  block: 'Blok A No. 12',
-};
 
 const ANNOUNCEMENTS_DATA = [
   {
@@ -44,38 +39,11 @@ const ANNOUNCEMENTS_DATA = [
   },
 ];
 
-const QUICK_MENUS_DATA = [
-  {
-    id: '1',
-    title: 'IZIN TAMU\nQR',
-    icon: '🔳',
-    action: () => alert('Buka Izin Tamu QR'),
-  },
-  {
-    id: '2',
-    title: 'JADWAL\nRONDA',
-    icon: '🗓️',
-    action: () => alert('Buka Jadwal Ronda'),
-  },
-  {
-    id: '3',
-    title: 'LAPAK\nWARGA',
-    icon: '🏪',
-    action: () => alert('Buka Lapak Warga'),
-  },
-  {
-    id: '4',
-    title: 'KONTAK\nRT',
-    icon: '📞',
-    action: () => alert('Buka Kontak RT'),
-  },
-];
-
 // ============================================================================
 // 📱 KOMPONEN UTAMA UI
 // ============================================================================
 
-export default function HomeScreen() {
+export default function HomeScreen({ user, tenantCode, navigation }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [weather, setWeather] = useState({ temp: '32°C', icon: '⛅' });
@@ -84,6 +52,34 @@ export default function HomeScreen() {
   const [isHoldingSos, setIsHoldingSos] = useState(false);
   const sosTimerRef = useRef(null);
   const progressAnim = useRef(new Animated.Value(0)).current;
+
+  // Menu Akses Cepat yang terhubung dengan React Navigation
+  const QUICK_MENUS_DATA = [
+    {
+      id: '1',
+      title: 'IZIN TAMU\nQR',
+      icon: '🔳',
+      action: () => Alert.alert('Izin Tamu', 'Fitur QR Izin Tamu sedang disiapkan.'),
+    },
+    {
+      id: '2',
+      title: 'JADWAL\nRONDA',
+      icon: '🗓️',
+      action: () => Alert.alert('Jadwal Ronda', 'Jadwal ronda wilayah ' + (user?.tenant_id || tenantCode || 'RT')),
+    },
+    {
+      id: '3',
+      title: 'LAPAK\nWARGA',
+      icon: '🏪',
+      action: () => Alert.alert('Lapak Warga', 'Fitur UMKM Warga sedang disiapkan.'),
+    },
+    {
+      id: '4',
+      title: 'ADUAN\nWARGA',
+      icon: '📢',
+      action: () => navigation?.navigate('Report'),
+    },
+  ];
 
   // 1. Timer Real-time Jam Digital
   useEffect(() => {
@@ -135,14 +131,12 @@ export default function HomeScreen() {
   const handleSosPressIn = () => {
     setIsHoldingSos(true);
 
-    // Jalankan animasi progress 3 detik
     Animated.timing(progressAnim, {
       toValue: 1,
       duration: 3000,
       useNativeDriver: false,
     }).start();
 
-    // Jalankan timer 3 detik
     sosTimerRef.current = setTimeout(() => {
       triggerEmergencyAlert();
       resetSosButton();
@@ -168,12 +162,11 @@ export default function HomeScreen() {
   const triggerEmergencyAlert = () => {
     Alert.alert(
       '🚨 SINYAL DARURAT TERKIRIM!',
-      'Lokasi dan koordinat rumah Anda telah dikirimkan ke Pos Satpam dan Pengurus RT.',
+      `Sinyal darurat dari ${user?.name || 'Warga'} (${user?.block || 'Blok Rumah'}) telah dikirimkan ke Pos Satpam & Pengurus RT ${tenantCode || ''}.`,
       [{ text: 'OK', style: 'destructive' }]
     );
   };
 
-  // Interpolasi lebar bar indikator penekanan SOS
   const progressWidth = progressAnim.interpolate({
     inputRange: [0, 1],
     outputRange: ['0%', '100%'],
@@ -184,13 +177,13 @@ export default function HomeScreen() {
       <StatusBar barStyle="light-content" backgroundColor="#0B579D" />
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         
-        {/* 1. HEADER GRADIENT (BIRU KE HIJAU) */}
+        {/* 1. HEADER BANNER (DINAMIS DARI SUPABASE USER) */}
         <View style={styles.headerBackground}>
           <View style={styles.headerTopRow}>
             <View>
               <Text style={styles.mainTitle}>Beranda</Text>
               <Text style={styles.subGreeting}>
-                Halo, <Text style={styles.userName}>{USER_DATA.name}</Text> | {USER_DATA.block}
+                Halo, <Text style={styles.userName}>Pak {user?.name || 'Fulan'}</Text> | {user?.block || 'Blok Rumah'}
               </Text>
             </View>
 
@@ -207,7 +200,7 @@ export default function HomeScreen() {
 
         {/* 2. SECTION PENGUMUMAN RT */}
         <View style={styles.sectionHeaderRow}>
-          <Text style={styles.sectionTitle}>PENGUMUMAN RT</Text>
+          <Text style={styles.sectionTitle}>PENGUMUMAN RT ({user?.tenant_id || tenantCode || 'RT05-RW02'})</Text>
           <View style={styles.arrowNavigation}>
             <Text style={styles.arrowText}>‹   ›</Text>
           </View>
@@ -248,7 +241,7 @@ export default function HomeScreen() {
           ))}
         </View>
 
-        {/* 3. GRID MENU AKSES CEPAT (4 TOMBOL) */}
+        {/* 3. GRID MENU AKSES CEPAT */}
         <View style={styles.gridContainer}>
           {QUICK_MENUS_DATA.map((menu) => (
             <TouchableOpacity key={menu.id} style={styles.menuCard} onPress={menu.action}>
@@ -258,11 +251,10 @@ export default function HomeScreen() {
           ))}
         </View>
 
-        {/* 4. CARD TOMBOL DARURAT (SOS) DENGAN PENGAMAN TAHAN 3 DETIK */}
+        {/* 4. CARD TOMBOL DARURAT (SOS) */}
         <View style={styles.sosCardContainer}>
           <View style={styles.sosCard}>
             
-            {/* Tombol SOS */}
             <TouchableOpacity
               activeOpacity={0.9}
               onPressIn={handleSosPressIn}
@@ -284,7 +276,6 @@ export default function HomeScreen() {
               {isHoldingSos ? '⚠️ Tahan terus selama 3 detik...' : 'Tahan 3 detik untuk panggil bantuan'}
             </Text>
 
-            {/* Indikator Visual Bar saat Ditekan */}
             <View style={styles.progressBarBackground}>
               <Animated.View style={[styles.progressBarFill, { width: progressWidth }]} />
             </View>
@@ -307,7 +298,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3F6FA',
   },
   scrollContent: {
-    paddingBottom: 25,
+    paddingBottom: 90, // Disesuaikan agar tidak tertutup Bottom Navigation Bar
   },
   headerBackground: {
     backgroundColor: '#0B579D',

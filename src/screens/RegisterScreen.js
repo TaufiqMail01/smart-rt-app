@@ -23,7 +23,7 @@ export default function RegisterScreen({ route, navigation }) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Filter ketat: Menghapus semua karakter selain angka (0-9)
+  // Filter angka saja untuk nomor WhatsApp
   const handlePhoneChange = (text) => {
     const numericOnly = text.replace(/[^0-9]/g, '');
     setPhone(numericOnly);
@@ -47,36 +47,44 @@ export default function RegisterScreen({ route, navigation }) {
 
     setLoading(true);
 
-    const userData = {
-      name,
-      block,
-      phone,
-      tenantCode,
-    };
+    try {
+      const userData = {
+        name: name.trim(),
+        block: block.trim(),
+        phone: phone.trim(),
+        tenantCode,
+      };
 
-    const result = await registerUser(email, password, userData);
-    setLoading(false);
+      const result = await registerUser(email.trim(), password, userData);
 
-    if (result.success) {
-      Alert.alert(
-        'Pendaftaran Dikirim',
-        'Akun Anda berhasil didaftarkan ke Supabase DB. Menunggu verifikasi dari Pengurus RT.',
-        [
-          {
-            text: 'Masuk Sekarang',
-            onPress: () => navigation.navigate('Login', { tenantCode }),
-          },
-        ]
-      );
-    } else {
-      Alert.alert('Gagal Mendaftar', result.message);
+      if (result.success) {
+        Alert.alert('Berhasil', 'Pendaftaran berhasil disimpan!');
+        
+        // Langsung navigasi otomatis ke halaman Login
+        navigation.navigate('Login', { 
+          tenantCode,
+          registeredEmail: email.trim() 
+        });
+      } else {
+        let errorMessage = result.message || 'Gagal terhubung ke server Supabase.';
+
+        if (result.message?.includes('rate limit exceeded')) {
+          errorMessage =
+            'Batas pendaftaran email terlampaui. Silakan gunakan email lain atau ubah Rate Limit di Supabase Dashboard.';
+        }
+
+        Alert.alert('Gagal Mendaftar', errorMessage);
+      }
+    } catch (err) {
+      Alert.alert('Error Sistem', err.message || 'Terjadi kesalahan tidak terduga.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        
         <View style={styles.badgeRt}>
           <Text style={styles.badgeRtText}>WILAYAH: {tenantCode}</Text>
         </View>
@@ -96,7 +104,7 @@ export default function RegisterScreen({ route, navigation }) {
           <Text style={styles.label}>Blok / Nomor Rumah:</Text>
           <TextInput
             style={styles.input}
-            placeholder="Contoh: Blok A No. 12"
+            placeholder="Contoh: No. 24"
             value={block}
             onChangeText={setBlock}
           />
@@ -104,7 +112,7 @@ export default function RegisterScreen({ route, navigation }) {
           <Text style={styles.label}>Nomor WhatsApp / HP (Angka Saja):</Text>
           <TextInput
             style={styles.input}
-            placeholder="Contoh: 081234567890"
+            placeholder="Contoh: 081282820885"
             value={phone}
             onChangeText={handlePhoneChange}
             keyboardType="number-pad"
@@ -114,7 +122,7 @@ export default function RegisterScreen({ route, navigation }) {
           <Text style={styles.label}>Alamat Email:</Text>
           <TextInput
             style={styles.input}
-            placeholder="contoh: fulan@email.com"
+            placeholder="contoh: fulan@gmail.com"
             value={email}
             onChangeText={setEmail}
             keyboardType="email-address"
@@ -148,7 +156,7 @@ export default function RegisterScreen({ route, navigation }) {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.loginLink}
           onPress={() => navigation.navigate('Login', { tenantCode })}
         >
@@ -156,21 +164,14 @@ export default function RegisterScreen({ route, navigation }) {
             Sudah memiliki akun? <Text style={styles.boldText}>Masuk ke Akun</Text>
           </Text>
         </TouchableOpacity>
-
       </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F3F6FA',
-  },
-  scrollContent: {
-    paddingHorizontal: 20,
-    paddingVertical: 30,
-  },
+  container: { flex: 1, backgroundColor: '#F3F6FA' },
+  scrollContent: { paddingHorizontal: 20, paddingVertical: 30 },
   badgeRt: {
     alignSelf: 'center',
     backgroundColor: '#E0F2FE',
@@ -179,24 +180,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginBottom: 12,
   },
-  badgeRtText: {
-    color: '#0284C7',
-    fontWeight: 'bold',
-    fontSize: 12,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#0F172A',
-    textAlign: 'center',
-  },
-  subtitle: {
-    fontSize: 13,
-    color: '#64748B',
-    textAlign: 'center',
-    marginTop: 4,
-    marginBottom: 20,
-  },
+  badgeRtText: { color: '#0284C7', fontWeight: 'bold', fontSize: 12 },
+  title: { fontSize: 22, fontWeight: 'bold', color: '#0F172A', textAlign: 'center' },
+  subtitle: { fontSize: 13, color: '#64748B', textAlign: 'center', marginTop: 4, marginBottom: 20 },
   card: {
     backgroundColor: '#FFFFFF',
     borderRadius: 16,
@@ -206,12 +192,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 8,
   },
-  label: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: '#334155',
-    marginBottom: 6,
-  },
+  label: { fontSize: 12, fontWeight: 'bold', color: '#334155', marginBottom: 6 },
   input: {
     borderWidth: 1,
     borderColor: '#CBD5E1',
@@ -228,22 +209,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
   },
-  buttonText: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-    fontSize: 14,
-  },
-  loginLink: {
-    marginTop: 20,
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  loginText: {
-    color: '#64748B',
-    fontSize: 13,
-  },
-  boldText: {
-    color: '#0B579D',
-    fontWeight: 'bold',
-  },
+  buttonText: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 14 },
+  loginLink: { marginTop: 20, alignItems: 'center', marginBottom: 10 },
+  loginText: { color: '#64748B', fontSize: 13 },
+  boldText: { color: '#0B579D', fontWeight: 'bold' },
 });

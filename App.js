@@ -12,14 +12,32 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [user, setUser] = useState(null);
-  const [tenantCode, setTenantCode] = useState(null);
+  const [tenantCode, setTenantCode] = useState('RT05-RW02-DEMO'); // Memberikan default tenantCode agar alur tidak gantung
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {!user || !tenantCode ? (
+        {!user ? (
           // ==================== ALUR UN-AUTHENTICATED ====================
           <>
+            <Stack.Screen name="Login">
+              {(props) => (
+                <LoginScreen
+                  {...props}
+                  tenantCode={tenantCode}
+                  onLoginSuccess={(userData) => {
+                    // Pastikan tenantCode terbawa dari userData jika tersedia di database Supabase
+                    if (userData?.tenant_id) {
+                      setTenantCode(userData.tenant_id);
+                    }
+                    setUser(userData);
+                  }}
+                />
+              )}
+            </Stack.Screen>
+
+            <Stack.Screen name="Register" component={RegisterScreen} />
+
             <Stack.Screen name="Setup">
               {(props) => (
                 <SetupScreen
@@ -31,19 +49,6 @@ export default function App() {
                 />
               )}
             </Stack.Screen>
-
-            <Stack.Screen name="Login">
-              {(props) => (
-                <LoginScreen
-                  {...props}
-                  onLoginSuccess={(userData) => {
-                    setUser(userData);
-                  }}
-                />
-              )}
-            </Stack.Screen>
-
-            <Stack.Screen name="Register" component={RegisterScreen} />
           </>
         ) : (
           // ==================== ALUR AUTHENTICATED ====================
@@ -57,7 +62,6 @@ export default function App() {
                   tenantCode={tenantCode}
                   onLogout={() => {
                     setUser(null);
-                    setTenantCode(null);
                   }}
                 />
               )}
