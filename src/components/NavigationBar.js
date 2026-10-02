@@ -1,69 +1,84 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
 
-import HomeScreen from '../screens/HomeScreen';
-import ServicesScreen from '../screens/ServicesScreen';
-import FinanceScreen from '../screens/FinanceScreen';
-import ReportScreen from '../screens/ReportScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import HomeScreen from '../screens/warga/HomeScreen';
+import ReportScreen from '../screens/warga/ReportScreen';
+import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';
+import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';
 
-const Tab = createBottomTabNavigator();
+export default function NavigationBar({ user, tenantCode, navigation, onLogout }) {
+  const [activeTab, setActiveTab] = useState('Home');
+  const userRole = user?.role || 'warga';
 
-export default function NavigationBar({ user, tenantCode, onLogout }) {
+  const renderScreen = () => {
+    switch (activeTab) {
+      case 'Home':
+        return <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
+      case 'Aduan':
+        return <ReportScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
+      case 'Satpam':
+        return <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
+      case 'Admin':
+        return <AdminDashboardScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
+      default:
+        return <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
+    }
+  };
+
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarActiveTintColor: '#0B579D',
-        tabBarInactiveTintColor: '#64748B',
-        tabBarStyle: styles.tabBar,
-        tabBarLabelStyle: styles.tabBarLabel,
-        tabBarIcon: ({ focused }) => {
-          let icon = '🏠';
-          if (route.name === 'BERANDA') icon = '🏠';
-          else if (route.name === 'LAYANAN') icon = '📄';
-          else if (route.name === 'KEUANGAN') icon = '💳';
-          else if (route.name === 'ADUAN') icon = '⚠️';
-          else if (route.name === 'PROFIL') icon = '👤';
+    <SafeAreaView style={styles.container}>
+      <View style={styles.screenContainer}>{renderScreen()}</View>
 
-          return <Text style={{ fontSize: focused ? 20 : 18 }}>{icon}</Text>;
-        },
-      })}
-    >
-      <Tab.Screen name="BERANDA">
-        {(props) => <HomeScreen {...props} user={user} tenantCode={tenantCode} />}
-      </Tab.Screen>
-      <Tab.Screen name="LAYANAN" component={ServicesScreen} />
-      <Tab.Screen name="KEUANGAN" component={FinanceScreen} />
-      <Tab.Screen name="ADUAN">
-        {(props) => <ReportScreen {...props} user={user} tenantCode={tenantCode} />}
-      </Tab.Screen>
-      <Tab.Screen name="PROFIL">
-        {(props) => (
-          <ProfileScreen
-            {...props}
-            user={user}
-            tenantCode={tenantCode}
-            onLogout={onLogout}
-          />
+      <View style={styles.navBar}>
+        <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('Home')}>
+          <Text style={[styles.navIcon, activeTab === 'Home' && styles.activeText]}>🏠</Text>
+          <Text style={[styles.navLabel, activeTab === 'Home' && styles.activeText]}>Beranda</Text>
+        </TouchableOpacity>
+
+        {userRole !== 'satpam' && (
+          <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('Aduan')}>
+            <Text style={[styles.navIcon, activeTab === 'Aduan' && styles.activeText]}>📢</Text>
+            <Text style={[styles.navLabel, activeTab === 'Aduan' && styles.activeText]}>Aduan</Text>
+          </TouchableOpacity>
         )}
-      </Tab.Screen>
-    </Tab.Navigator>
+
+        {(userRole === 'satpam' || userRole === 'admin_rt') && (
+          <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('Satpam')}>
+            <Text style={[styles.navIcon, activeTab === 'Satpam' && styles.activeText]}>📷</Text>
+            <Text style={[styles.navLabel, activeTab === 'Satpam' && styles.activeText]}>Pos Jaga</Text>
+          </TouchableOpacity>
+        )}
+
+        {userRole === 'admin_rt' && (
+          <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('Admin')}>
+            <Text style={[styles.navIcon, activeTab === 'Admin' && styles.activeText]}>🛡️</Text>
+            <Text style={[styles.navLabel, activeTab === 'Admin' && styles.activeText]}>Admin RT</Text>
+          </TouchableOpacity>
+        )}
+
+        <TouchableOpacity style={styles.navItem} onPress={onLogout}>
+          <Text style={styles.navIcon}>🚪</Text>
+          <Text style={styles.navLabel}>Keluar</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  tabBar: {
-    height: 60,
-    paddingBottom: 6,
-    paddingTop: 6,
+  container: { flex: 1, backgroundColor: '#F3F6FA' },
+  screenContainer: { flex: 1 },
+  navBar: {
+    flexDirection: 'row',
     backgroundColor: '#FFFFFF',
+    paddingVertical: 10,
     borderTopWidth: 1,
     borderTopColor: '#E2E8F0',
+    justifyContent: 'space-around',
+    elevation: 8,
   },
-  tabBarLabel: {
-    fontSize: 9,
-    fontWeight: 'bold',
-  },
+  navItem: { alignItems: 'center', flex: 1 },
+  navIcon: { fontSize: 20 },
+  navLabel: { fontSize: 10, fontWeight: 'bold', color: '#64748B' },
+  activeText: { color: '#0B579D' },
 });

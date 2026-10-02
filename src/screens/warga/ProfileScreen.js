@@ -10,13 +10,13 @@ import {
 } from 'react-native';
 
 export default function ProfileScreen({ user, tenantCode, onLogout, navigation }) {
-  // Simulasi data profil warga/admin
+  // Gunakan data user dari props atau default fallback jika kosong
   const currentUser = user || {
     name: 'Pak Taufiq',
     block: 'Blok A No. 12',
     email: 'taufiq@email.com',
     phone: '081234567890',
-    role: 'admin_rt', // Ubah ke 'warga' untuk tes tampilan warga biasa
+    role: 'admin_rt', // Ubah ke 'warga' untuk menguji tampilan warga biasa
     status: 'approved',
   };
 
@@ -45,7 +45,7 @@ export default function ProfileScreen({ user, tenantCode, onLogout, navigation }
           </View>
         </View>
 
-        {/* Akses Khusus Admin RT (Hanya muncul jika role === 'admin_rt') */}
+        {/* Akses Khusus Admin / Pengurus RT */}
         {currentUser.role === 'admin_rt' && (
           <View style={styles.adminSection}>
             <Text style={styles.sectionTitle}>AKSES PENGURUS RT</Text>
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     padding: 20,
+    paddingBottom: 40,
   },
   headerCard: {
     backgroundColor: '#FFFFFF',
