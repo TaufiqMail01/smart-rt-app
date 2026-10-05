@@ -12,7 +12,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import * as Location from 'expo-location'; // 🟢 Module untuk deteksi GPS saat login
+import * as Location from 'expo-location';
 
 export default function LoginScreen({ tenantCode, onLoginSuccess, onChangeTenant, navigation }) {
   const [activeRole, setActiveRole] = useState('warga'); // 'warga', 'satpam', 'admin_rt'
@@ -34,7 +34,6 @@ export default function LoginScreen({ tenantCode, onLoginSuccess, onChangeTenant
 
     setLoading(true);
 
-    // 🟢 MINTA & AKTIFKAN IZIN LOKASI GPS UNTUK FITUR SOS
     try {
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
@@ -43,7 +42,6 @@ export default function LoginScreen({ tenantCode, onLoginSuccess, onChangeTenant
           'Aplikasi membutuhkan akses GPS lokasi agar fitur Tombol Darurat (SOS) dapat mengirim titik lokasi Anda ke Pos Satpam saat situasi darurat.'
         );
       } else {
-        // Ambil koordinat GPS awal secara presisi
         await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
       }
     } catch (error) {
@@ -52,17 +50,18 @@ export default function LoginScreen({ tenantCode, onLoginSuccess, onChangeTenant
 
     setLoading(false);
 
-    const dummyUser = {
+    // 🟢 Memastikan objek role dikirim sesuai tab yang aktif (warga / satpam / admin_rt)
+    const loggedInUser = {
       id: 'usr-123',
-      name: activeRole === 'admin_rt' ? 'Pak Taufiq' : activeRole === 'satpam' ? 'Pak Danang' : 'Pak Budi',
+      name: activeRole === 'admin_rt' ? 'Pak Taufiq (Pengurus)' : activeRole === 'satpam' ? 'Danru Satpam' : 'Warga RT',
       block: 'Blok A No. 12',
       email: email.trim(),
-      role: activeRole,
+      role: activeRole, // <-- Mengirimkan role yang dipilih saat login
       status: 'approved',
     };
 
-    Alert.alert('Berhasil Login', `Selamat datang kembali, ${dummyUser.name}! GPS lokasi telah aktif untuk fitur SOS.`);
-    onLoginSuccess(dummyUser);
+    Alert.alert('Berhasil Login', `Selamat datang kembali, ${loggedInUser.name}!`);
+    onLoginSuccess(loggedInUser);
   };
 
   const handleSendResetPassword = () => {
@@ -88,7 +87,6 @@ export default function LoginScreen({ tenantCode, onLoginSuccess, onChangeTenant
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
-        {/* Container Utama Diturunkan Kebawah */}
         <View style={styles.centerContainer}>
           
           {/* Header Smart RT */}
@@ -106,21 +104,21 @@ export default function LoginScreen({ tenantCode, onLoginSuccess, onChangeTenant
               style={[styles.tabButton, activeRole === 'warga' && styles.tabButtonActive]}
               onPress={() => setActiveRole('warga')}
             >
-              <Text style={[styles.tabText, activeRole === 'warga' && styles.tabTextActive]}>🧑‍🤝‍🧑 Warga</Text>
+              <Text style={[styles.tabText, activeRole === 'warga' && styles.tabTextActive]}>Warga</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={[styles.tabButton, activeRole === 'satpam' && styles.tabButtonActive]}
               onPress={() => setActiveRole('satpam')}
             >
-              <Text style={[styles.tabText, activeRole === 'satpam' && styles.tabTextActive]}>🛡️ Satpam</Text>
+              <Text style={[styles.tabText, activeRole === 'satpam' && styles.tabTextActive]}>Satpam</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={[styles.tabButton, activeRole === 'admin_rt' && styles.tabButtonActive]}
               onPress={() => setActiveRole('admin_rt')}
             >
-              <Text style={[styles.tabText, activeRole === 'admin_rt' && styles.tabTextActive]}>👑 Pengurus</Text>
+              <Text style={[styles.tabText, activeRole === 'admin_rt' && styles.tabTextActive]}>Pengurus</Text>
             </TouchableOpacity>
           </View>
 
@@ -151,7 +149,7 @@ export default function LoginScreen({ tenantCode, onLoginSuccess, onChangeTenant
                 secureTextEntry={!showPassword}
               />
               <TouchableOpacity style={styles.eyeButton} onPress={() => setShowPassword(!showPassword)}>
-                <Text style={styles.eyeIcon}>{showPassword ? '👁️' : '🙈'}</Text>
+                <Text style={styles.eyeIcon}>{showPassword ? '👁' : '👁‍🗨'}</Text>
               </TouchableOpacity>
             </View>
 

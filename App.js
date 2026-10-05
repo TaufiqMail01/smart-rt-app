@@ -3,19 +3,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-// Import Screens Auth
+// Import Screens Auth (Otentikasi & Setup)
 import WelcomeScreen from './src/screens/auth/WelcomeScreen';
 import SetupScreen from './src/screens/auth/SetupScreen';
 import LoginScreen from './src/screens/auth/LoginScreen';
 import RegisterScreen from './src/screens/auth/RegisterScreen';
+
+// Import Navigasi Utama Aplikasi
 import NavigationBar from './src/components/NavigationBar';
 
-// Import Screens Warga
+// Import Screen Tambahan Warga / Pendukung
 import GuestQrScreen from './src/screens/warga/GuestQrScreen';
 import RondaScreen from './src/screens/warga/RondaScreen';
 import MarketplaceScreen from './src/screens/warga/MarketplaceScreen';
 import AssetRtScreen from './src/screens/warga/AssetRtScreen';
-import ReportScreen from './src/screens/warga/ReportScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,10 +25,9 @@ export default function App() {
   const [tenantCode, setTenantCode] = useState(null);
   const [user, setUser] = useState(null);
 
+  // 🟢 Fungsi Logout Utama: Mengosongkan data user agar aplikasi kembali ke halaman Login
   const handleLogout = () => {
     setUser(null);
-    setTenantCode(null);
-    setIsStarted(false);
   };
 
   return (
@@ -59,13 +59,11 @@ export default function App() {
                   />
                 )}
               </Stack.Screen>
-              <Stack.Screen name="Register">
-                {(props) => <RegisterScreen {...props} tenantCode={tenantCode} />}
-              </Stack.Screen>
+              <Stack.Screen name="Register" component={RegisterScreen} />
             </>
           ) : (
             <>
-              {/* Main App dengan Bottom Navigation Bar */}
+              {/* MainApp merender NavigationBar dan meneruskan fungsi onLogout */}
               <Stack.Screen name="MainApp">
                 {(props) => (
                   <NavigationBar
@@ -77,22 +75,11 @@ export default function App() {
                 )}
               </Stack.Screen>
 
-              {/* Rute Layar Tambahan Warga */}
-              <Stack.Screen name="GuestQr">
-                {(props) => <GuestQrScreen {...props} user={user} tenantCode={tenantCode} />}
-              </Stack.Screen>
-              <Stack.Screen name="Ronda">
-                {(props) => <RondaScreen {...props} user={user} tenantCode={tenantCode} />}
-              </Stack.Screen>
-              <Stack.Screen name="Marketplace">
-                {(props) => <MarketplaceScreen {...props} user={user} tenantCode={tenantCode} />}
-              </Stack.Screen>
-              <Stack.Screen name="AssetRt">
-                {(props) => <AssetRtScreen {...props} user={user} tenantCode={tenantCode} />}
-              </Stack.Screen>
-              <Stack.Screen name="Report">
-                {(props) => <ReportScreen {...props} user={user} tenantCode={tenantCode} />}
-              </Stack.Screen>
+              {/* Stack Screen Pendukung untuk Fitur-Fitur Khusus */}
+              <Stack.Screen name="GuestQr" component={GuestQrScreen} />
+              <Stack.Screen name="Ronda" component={RondaScreen} />
+              <Stack.Screen name="Marketplace" component={MarketplaceScreen} />
+              <Stack.Screen name="AssetRt" component={AssetRtScreen} />
             </>
           )}
         </Stack.Navigator>

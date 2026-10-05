@@ -2306,3 +2306,576 @@
 {"_e":"metro:client_log","_t":1790938836125,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
 {"_e":"metro:client_log","_t":1790938836628,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
 {"_e":"metro:client_log","_t":1790938836628,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"root:init","_t":1791172215125,"format":"v0-jsonl","version":"57.0.27"}
+{"_e":"env:mode","_t":1791172215127,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791172215130,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1791172215535,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791172216121,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791172216783,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791172224804,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"root:init","_t":1791172243656,"format":"v0-jsonl","version":"57.0.27"}
+{"_e":"env:mode","_t":1791172243657,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791172243659,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1791172243863,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791172244186,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791172244482,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791172251835,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1791172301180,"id":"1","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791172301180,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172301185,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172301890,"id":"1","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1791172301995,"id":"1","progress":0.010000000000000002,"total":3,"current":1}
+{"_e":"metro:bundling:progress","_t":1791172303044,"id":"1","progress":0.04000000000000001,"total":3,"current":2}
+{"_e":"metro:bundling:progress","_t":1791172303157,"id":"1","progress":0.20661157024793386,"total":11,"current":5}
+{"_e":"metro:bundling:progress","_t":1791172303716,"id":"1","progress":0.29752066115702475,"total":11,"current":6}
+{"_e":"metro:bundling:progress","_t":1791172303819,"id":"1","progress":0.33284023668639046,"total":26,"current":15}
+{"_e":"metro:bundling:progress","_t":1791172303919,"id":"1","progress":0.48674959437533805,"total":43,"current":30}
+{"_e":"metro:bundling:progress","_t":1791172304019,"id":"1","progress":0.5331317712270093,"total":63,"current":46}
+{"_e":"metro:bundling:progress","_t":1791172304128,"id":"1","progress":0.5331317712270093,"total":83,"current":55}
+{"_e":"metro:bundling:progress","_t":1791172304232,"id":"1","progress":0.5331317712270093,"total":120,"current":63}
+{"_e":"metro:bundling:progress","_t":1791172304336,"id":"1","progress":0.5331317712270093,"total":133,"current":66}
+{"_e":"metro:bundling:progress","_t":1791172304436,"id":"1","progress":0.5331317712270093,"total":141,"current":73}
+{"_e":"metro:bundling:progress","_t":1791172304542,"id":"1","progress":0.5331317712270093,"total":151,"current":86}
+{"_e":"metro:bundling:progress","_t":1791172304644,"id":"1","progress":0.5331317712270093,"total":165,"current":108}
+{"_e":"metro:bundling:progress","_t":1791172304744,"id":"1","progress":0.5331317712270093,"total":204,"current":122}
+{"_e":"metro:bundling:progress","_t":1791172304847,"id":"1","progress":0.5331317712270093,"total":216,"current":130}
+{"_e":"metro:bundling:progress","_t":1791172304946,"id":"1","progress":0.5331317712270093,"total":231,"current":139}
+{"_e":"metro:bundling:progress","_t":1791172305046,"id":"1","progress":0.5331317712270093,"total":283,"current":159}
+{"_e":"metro:bundling:progress","_t":1791172305146,"id":"1","progress":0.5331317712270093,"total":307,"current":185}
+{"_e":"metro:bundling:progress","_t":1791172305246,"id":"1","progress":0.5331317712270093,"total":325,"current":208}
+{"_e":"metro:bundling:progress","_t":1791172305348,"id":"1","progress":0.5331317712270093,"total":357,"current":231}
+{"_e":"metro:bundling:progress","_t":1791172305448,"id":"1","progress":0.5331317712270093,"total":389,"current":246}
+{"_e":"metro:bundling:progress","_t":1791172305548,"id":"1","progress":0.5331317712270093,"total":394,"current":267}
+{"_e":"metro:bundling:progress","_t":1791172305648,"id":"1","progress":0.5331317712270093,"total":412,"current":298}
+{"_e":"metro:bundling:progress","_t":1791172305750,"id":"1","progress":0.6078086745580737,"total":422,"current":329}
+{"_e":"metro:bundling:progress","_t":1791172305851,"id":"1","progress":0.6646203243923644,"total":433,"current":353}
+{"_e":"metro:bundling:progress","_t":1791172305955,"id":"1","progress":0.6690952985534011,"total":456,"current":373}
+{"_e":"metro:bundling:progress","_t":1791172306056,"id":"1","progress":0.7095242315819917,"total":463,"current":390}
+{"_e":"metro:bundling:progress","_t":1791172306157,"id":"1","progress":0.7208971164115344,"total":477,"current":405}
+{"_e":"metro:bundling:started","_t":1791172306219,"id":"3","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791172306220,"id":"1","progress":0.7208971164115344,"total":477,"current":405}
+{"_e":"metro:bundling:progress","_t":1791172306220,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172306258,"id":"1","progress":0.7208971164115344,"total":503,"current":421}
+{"_e":"metro:bundling:progress","_t":1791172306258,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172306365,"id":"1","progress":0.7208971164115344,"total":518,"current":439}
+{"_e":"metro:bundling:progress","_t":1791172306365,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172306465,"id":"1","progress":0.7519884491716746,"total":527,"current":457}
+{"_e":"metro:bundling:progress","_t":1791172306466,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172306570,"id":"1","progress":0.7984816092921471,"total":545,"current":487}
+{"_e":"metro:bundling:progress","_t":1791172306570,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172306670,"id":"1","progress":0.8569661048099139,"total":552,"current":511}
+{"_e":"metro:bundling:progress","_t":1791172306670,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172306770,"id":"1","progress":0.8590124925639501,"total":574,"current":532}
+{"_e":"metro:bundling:progress","_t":1791172306770,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172306871,"id":"1","progress":0.8749247998519136,"total":588,"current":550}
+{"_e":"metro:bundling:progress","_t":1791172306871,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172306971,"id":"1","progress":0.8938842975206611,"total":605,"current":572}
+{"_e":"metro:bundling:progress","_t":1791172306972,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172307072,"id":"1","progress":0.9355012093523246,"total":610,"current":590}
+{"_e":"metro:bundling:progress","_t":1791172307072,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172307173,"id":"1","progress":0.9806456188647427,"total":617,"current":611}
+{"_e":"metro:bundling:progress","_t":1791172307173,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172307283,"id":"1","progress":0.9905288615606472,"total":632,"current":629}
+{"_e":"metro:bundling:progress","_t":1791172307283,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172307463,"id":"1","progress":0.999,"total":632,"current":632}
+{"_e":"metro:bundling:progress","_t":1791172307463,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172307562,"id":"1","progress":0.999,"total":634,"current":634}
+{"_e":"metro:bundling:progress","_t":1791172307562,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172307792,"id":"1","progress":0.999,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172307792,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791172307867,"id":"1","total":1,"ms":6693.3772}
+{"_e":"metro:bundling:progress","_t":1791172307867,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172307914,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172308014,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172308114,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791172308244,"id":"3","total":1,"ms":2024.2578}
+{"_e":"metro:client_log","_t":1791172308467,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791172308468,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791172337907,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791172338523,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791172338525,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:client_log","_t":1791172364445,"level":"warn","data":["[expo-image-picker] `ImagePicker.MediaTypeOptions` have been deprecated. Use `ImagePicker.MediaType` or an array of `ImagePicker.MediaType` instead."]}
+{"_e":"metro:client_log","_t":1791172368422,"level":"warn","data":["Image: style.resizeMode is deprecated. Please use props.resizeMode."]}
+{"_e":"metro:client_log","_t":1791172386513,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791172386514,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:client_log","_t":1791172434225,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791172434225,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:client_log","_t":1791172450775,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791172450775,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:failed","_t":1791172877920,"id":null,"message":"Unable to resolve \"../screens/satpam/SatpamHomeScreen\" from \"src\\components\\NavigationBar.js\"\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamHomeScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../screens/satpam/SatpamHomeScreen","originModulePath":"src\\components\\NavigationBar.js"}
+{"_e":"metro:client_log","_t":1791172877922,"level":"error","data":["[UnableToResolveError: Unable to resolve module ../screens/satpam/SatpamHomeScreen from E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: \n\nNone of these files exist:\n  * src\\screens\\satpam\\SatpamHomeScreen(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css)\n  * src\\screens\\satpam\\SatpamHomeScreen\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |]"]}
+{"_e":"metro:bundling:failed","_t":1791172878094,"id":null,"message":"Unable to resolve \"../screens/satpam/SatpamHomeScreen\" from \"src\\components\\NavigationBar.js\"\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamHomeScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../screens/satpam/SatpamHomeScreen","originModulePath":"src\\components\\NavigationBar.js"}
+{"_e":"metro:client_log","_t":1791172878095,"level":"error","data":["[UnableToResolveError: Unable to resolve module ../screens/satpam/SatpamHomeScreen from E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: \n\nNone of these files exist:\n  * src\\screens\\satpam\\SatpamHomeScreen(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css)\n  * src\\screens\\satpam\\SatpamHomeScreen\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |]"]}
+{"_e":"metro:client_log","_t":1791172886335,"level":"error","data":["The action 'NAVIGATE' with payload {\"name\":\"SatpamScanner\"} was not handled by any navigator.\n\nDo you have a screen named 'SatpamScanner'?\n\nIf you're trying to navigate to a screen in a nested navigator, see https://reactnavigation.org/docs/nesting-navigators#navigating-to-a-screen-in-a-nested-navigator.\n\nIf you're using conditional rendering, navigation will happen automatically and you shouldn't navigate manually, see.\n\nThis is a development-only warning and won't be shown in production.","\n\n","\n\n"]}
+{"_e":"metro:bundling:failed","_t":1791172886515,"id":null,"message":"Unable to resolve \"../screens/satpam/SatpamHomeScreen\" from \"src\\components\\NavigationBar.js\"\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamHomeScreen\"\u001b[39m\n\n\u001b[90m \u001b[39m\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n","filename":null,"targetModuleName":"../screens/satpam/SatpamHomeScreen","originModulePath":"src\\components\\NavigationBar.js"}
+{"_e":"metro:client_log","_t":1791172886517,"level":"error","data":["[UnableToResolveError: Unable to resolve module ../screens/satpam/SatpamHomeScreen from E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: \n\nNone of these files exist:\n  * src\\screens\\satpam\\SatpamHomeScreen(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css)\n  * src\\screens\\satpam\\SatpamHomeScreen\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |]"]}
+{"_e":"metro:client_log","_t":1791172887444,"level":"error","data":["The action 'NAVIGATE' with payload {\"name\":\"SatpamScanner\"} was not handled by any navigator.\n\nDo you have a screen named 'SatpamScanner'?\n\nIf you're trying to navigate to a screen in a nested navigator, see https://reactnavigation.org/docs/nesting-navigators#navigating-to-a-screen-in-a-nested-navigator.\n\nIf you're using conditional rendering, navigation will happen automatically and you shouldn't navigate manually, see.\n\nThis is a development-only warning and won't be shown in production.","\n\n","\n\n"]}
+{"_e":"metro:bundling:failed","_t":1791172975423,"id":null,"message":"Unable to resolve \"../screens/satpam/SatpamHomeScreen\" from \"src\\components\\NavigationBar.js\"\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamHomeScreen\"\u001b[39m\n\n\u001b[90m \u001b[39m\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n","filename":null,"targetModuleName":"../screens/satpam/SatpamHomeScreen","originModulePath":"src\\components\\NavigationBar.js"}
+{"_e":"metro:client_log","_t":1791172975425,"level":"error","data":["[UnableToResolveError: Unable to resolve module ../screens/satpam/SatpamHomeScreen from E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: \n\nNone of these files exist:\n  * src\\screens\\satpam\\SatpamHomeScreen(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css)\n  * src\\screens\\satpam\\SatpamHomeScreen\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |]"]}
+{"_e":"metro:bundling:started","_t":1791172982070,"id":"9","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791172982071,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791172982072,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1791172982078,"id":"9","message":"Unable to resolve \"../screens/satpam/SatpamHomeScreen\" from \"src\\components\\NavigationBar.js\"\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamHomeScreen\"\u001b[39m\n\n\u001b[90m \u001b[39m\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n","filename":null,"targetModuleName":"../screens/satpam/SatpamHomeScreen","originModulePath":"src\\components\\NavigationBar.js"}
+{"_e":"metro:bundling:started","_t":1791173076045,"id":"a","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791173076045,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791173076046,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1791173076134,"id":"a","message":"Unable to resolve \"../screens/satpam/SatpamHomeScreen\" from \"src\\components\\NavigationBar.js\"\n  4 | import HomeScreen from '../screens/warga/HomeScreen';\n  5 | import ReportScreen from '../screens/warga/ReportScreen';\n> 6 | import SatpamHomeScreen from '../screens/satpam/SatpamHomeScreen'; // 🟢 Beranda khusus satpam\n    |                               ^\n  7 | import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';\n  8 | import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';\n  9 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamHomeScreen\"\u001b[39m\n\n\u001b[90m \u001b[39m\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n","filename":null,"targetModuleName":"../screens/satpam/SatpamHomeScreen","originModulePath":"src\\components\\NavigationBar.js"}
+{"_e":"metro:bundling:started","_t":1791173122430,"id":"d","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791173122430,"id":"d","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791173122431,"id":"d","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791173122501,"id":"d","total":1,"ms":70.3823}
+{"_e":"metro:client_log","_t":1791173122720,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791173122721,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791173129623,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791173130611,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791173130612,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791173156608,"id":"i","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791173156609,"id":"i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791173156638,"id":"i","total":1,"ms":29.7914}
+{"_e":"metro:client_log","_t":1791173156793,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791173156793,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791173195920,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791173196080,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791173196080,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791173238027,"id":"k","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791173238028,"id":"k","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791173238059,"id":"k","total":1,"ms":31.3031}
+{"_e":"metro:client_log","_t":1791173238206,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791173238206,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791173245655,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791173245797,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791173245797,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791173511788,"id":"m","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791173511788,"id":"m","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791173511814,"id":"m","total":1,"ms":25.9465}
+{"_e":"metro:client_log","_t":1791173512063,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791173512063,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791173517067,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791173517589,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791173517590,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791173847967,"id":"n","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791173847967,"id":"n","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791173847994,"id":"n","total":1,"ms":26.7885}
+{"_e":"metro:client_log","_t":1791173848230,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791173848230,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791173856134,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791173856804,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791173856805,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"root:init","_t":1791173901841,"format":"v0-jsonl","version":"57.0.27"}
+{"_e":"env:mode","_t":1791173901842,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791173901845,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1791173902142,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791173902632,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791173903109,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791173910135,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1791174114983,"id":"1","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174114984,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791174114988,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791174115708,"id":"1","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1791174115808,"id":"1","progress":0.09,"total":8,"current":3}
+{"_e":"metro:bundling:progress","_t":1791174115919,"id":"1","progress":0.20661157024793386,"total":11,"current":5}
+{"_e":"metro:bundling:progress","_t":1791174116468,"id":"1","progress":0.29752066115702475,"total":11,"current":6}
+{"_e":"metro:bundling:progress","_t":1791174116576,"id":"1","progress":0.29752066115702475,"total":55,"current":13}
+{"_e":"metro:bundling:progress","_t":1791174116675,"id":"1","progress":0.29752066115702475,"total":72,"current":19}
+{"_e":"metro:bundling:progress","_t":1791174116781,"id":"1","progress":0.29752066115702475,"total":77,"current":23}
+{"_e":"metro:bundling:progress","_t":1791174116881,"id":"1","progress":0.29752066115702475,"total":83,"current":35}
+{"_e":"metro:bundling:progress","_t":1791174116981,"id":"1","progress":0.29752066115702475,"total":95,"current":50}
+{"_e":"metro:bundling:progress","_t":1791174117082,"id":"1","progress":0.29752066115702475,"total":154,"current":65}
+{"_e":"metro:bundling:progress","_t":1791174117184,"id":"1","progress":0.29752066115702475,"total":210,"current":84}
+{"_e":"metro:bundling:progress","_t":1791174117285,"id":"1","progress":0.29752066115702475,"total":243,"current":115}
+{"_e":"metro:bundling:progress","_t":1791174117385,"id":"1","progress":0.29752066115702475,"total":264,"current":144}
+{"_e":"metro:bundling:progress","_t":1791174117485,"id":"1","progress":0.32758139390618385,"total":311,"current":178}
+{"_e":"metro:bundling:progress","_t":1791174117586,"id":"1","progress":0.4107103489921306,"total":323,"current":207}
+{"_e":"metro:bundling:progress","_t":1791174117686,"id":"1","progress":0.4544880696881707,"total":356,"current":240}
+{"_e":"metro:bundling:progress","_t":1791174117791,"id":"1","progress":0.5261084444444445,"total":375,"current":272}
+{"_e":"metro:bundling:progress","_t":1791174117890,"id":"1","progress":0.615926934786092,"total":395,"current":310}
+{"_e":"metro:bundling:progress","_t":1791174117990,"id":"1","progress":0.615926934786092,"total":446,"current":343}
+{"_e":"metro:bundling:progress","_t":1791174118090,"id":"1","progress":0.684774317804771,"total":458,"current":379}
+{"_e":"metro:bundling:progress","_t":1791174118190,"id":"1","progress":0.6950293628808865,"total":475,"current":396}
+{"_e":"metro:bundling:progress","_t":1791174118292,"id":"1","progress":0.715172991921963,"total":486,"current":411}
+{"_e":"metro:bundling:progress","_t":1791174118400,"id":"1","progress":0.715172991921963,"total":512,"current":429}
+{"_e":"metro:bundling:progress","_t":1791174118501,"id":"1","progress":0.7815097803929505,"total":526,"current":465}
+{"_e":"metro:bundling:progress","_t":1791174118604,"id":"1","progress":0.782417666254001,"total":537,"current":475}
+{"_e":"metro:bundling:progress","_t":1791174118708,"id":"1","progress":0.782417666254001,"total":547,"current":482}
+{"_e":"metro:bundling:progress","_t":1791174118827,"id":"1","progress":0.8303435465238396,"total":552,"current":503}
+{"_e":"metro:bundling:progress","_t":1791174118937,"id":"1","progress":0.8541229522084219,"total":554,"current":512}
+{"_e":"metro:bundling:progress","_t":1791174119037,"id":"1","progress":0.8541229522084219,"total":582,"current":525}
+{"_e":"metro:bundling:progress","_t":1791174119138,"id":"1","progress":0.872583203981008,"total":592,"current":553}
+{"_e":"metro:bundling:progress","_t":1791174119238,"id":"1","progress":0.9281286596659478,"total":601,"current":579}
+{"_e":"metro:bundling:progress","_t":1791174119348,"id":"1","progress":0.9773286719222485,"total":614,"current":607}
+{"_e":"metro:bundling:progress","_t":1791174119448,"id":"1","progress":0.9778662979822617,"total":629,"current":622}
+{"_e":"metro:bundling:progress","_t":1791174119562,"id":"1","progress":0.9905288615606472,"total":632,"current":629}
+{"_e":"metro:bundling:progress","_t":1791174119666,"id":"1","progress":0.9968379466431662,"total":632,"current":631}
+{"_e":"metro:bundling:progress","_t":1791174120380,"id":"1","progress":0.999,"total":632,"current":632}
+{"_e":"metro:bundling:progress","_t":1791174120484,"id":"1","progress":0.999,"total":634,"current":634}
+{"_e":"metro:bundling:done","_t":1791174120568,"id":"1","total":634,"ms":5584.8722}
+{"_e":"metro:client_log","_t":1791174120801,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174120805,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174206457,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174207182,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174207182,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791174248694,"id":"6","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174248694,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791174248732,"id":"6","total":1,"ms":37.8862}
+{"_e":"metro:client_log","_t":1791174248887,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174248887,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174252759,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174252940,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174252941,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:failed","_t":1791174311321,"id":null,"message":"SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };","importStack":null,"filename":"src\\components\\NavigationBar.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1791174311326,"level":"error","data":["[TransformError: SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };]"]}
+{"_e":"metro:bundling:failed","_t":1791174323723,"id":null,"message":"SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };","importStack":null,"filename":"src\\components\\NavigationBar.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1791174323723,"level":"error","data":["[TransformError: SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };]"]}
+{"_e":"metro:bundling:failed","_t":1791174323987,"id":null,"message":"SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };","importStack":null,"filename":"src\\components\\NavigationBar.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1791174323988,"level":"error","data":["[TransformError: SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };]"]}
+{"_e":"metro:bundling:started","_t":1791174344109,"id":"8","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174344109,"id":"8","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791174344110,"id":"8","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1791174344119,"id":"8","message":"SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };","importStack":null,"filename":"src\\components\\NavigationBar.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1791174424425,"id":"9","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174424426,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791174424427,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791174424503,"id":"9","total":1,"ms":77.3434}
+{"_e":"metro:client_log","_t":1791174424722,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174424722,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174429343,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174429777,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174429778,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"root:init","_t":1791174458019,"format":"v0-jsonl","version":"57.0.27"}
+{"_e":"env:mode","_t":1791174458020,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791174458023,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1791174458303,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791174458740,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791174459385,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791174466141,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1791174486050,"id":"2","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174486051,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791174486054,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791174486684,"id":"2","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1791174486790,"id":"2","progress":0.04000000000000001,"total":3,"current":2}
+{"_e":"metro:bundling:progress","_t":1791174486892,"id":"2","progress":0.04000000000000001,"total":22,"current":3}
+{"_e":"metro:bundling:progress","_t":1791174486935,"id":"2","progress":0.04000000000000001,"total":22,"current":4}
+{"_e":"metro:bundling:progress","_t":1791174487062,"id":"2","progress":0.04000000000000001,"total":37,"current":5}
+{"_e":"metro:bundling:progress","_t":1791174487185,"id":"2","progress":0.04000000000000001,"total":37,"current":6}
+{"_e":"metro:bundling:progress","_t":1791174487290,"id":"2","progress":0.04000000000000001,"total":40,"current":6}
+{"_e":"metro:bundling:progress","_t":1791174487350,"id":"2","progress":0.04000000000000001,"total":40,"current":7}
+{"_e":"metro:bundling:progress","_t":1791174487450,"id":"2","progress":0.04000000000000001,"total":43,"current":8}
+{"_e":"metro:bundling:progress","_t":1791174487550,"id":"2","progress":0.05975308641975308,"total":45,"current":11}
+{"_e":"metro:bundling:progress","_t":1791174487654,"id":"2","progress":0.08506944444444446,"total":72,"current":21}
+{"_e":"metro:bundling:progress","_t":1791174487760,"id":"2","progress":0.09692061231755073,"total":106,"current":33}
+{"_e":"metro:bundling:progress","_t":1791174487860,"id":"2","progress":0.152587890625,"total":128,"current":50}
+{"_e":"metro:bundling:progress","_t":1791174487961,"id":"2","progress":0.18159220041322316,"total":176,"current":75}
+{"_e":"metro:bundling:progress","_t":1791174488067,"id":"2","progress":0.25265250132975003,"total":189,"current":95}
+{"_e":"metro:bundling:progress","_t":1791174488169,"id":"2","progress":0.33661890352438595,"total":212,"current":123}
+{"_e":"metro:bundling:progress","_t":1791174488269,"id":"2","progress":0.33661890352438595,"total":282,"current":152}
+{"_e":"metro:bundling:progress","_t":1791174488369,"id":"2","progress":0.33661890352438595,"total":315,"current":179}
+{"_e":"metro:bundling:progress","_t":1791174488469,"id":"2","progress":0.3606802076896533,"total":353,"current":212}
+{"_e":"metro:bundling:progress","_t":1791174488569,"id":"2","progress":0.47473208317460774,"total":373,"current":257}
+{"_e":"metro:bundling:progress","_t":1791174488669,"id":"2","progress":0.5606171561324209,"total":398,"current":298}
+{"_e":"metro:bundling:progress","_t":1791174488769,"id":"2","progress":0.6041015659351934,"total":413,"current":321}
+{"_e":"metro:bundling:progress","_t":1791174488869,"id":"2","progress":0.6585229224468226,"total":435,"current":353}
+{"_e":"metro:bundling:progress","_t":1791174488970,"id":"2","progress":0.7148273223883943,"total":453,"current":383}
+{"_e":"metro:bundling:progress","_t":1791174489070,"id":"2","progress":0.7148273223883943,"total":473,"current":397}
+{"_e":"metro:bundling:progress","_t":1791174489171,"id":"2","progress":0.7417076218242399,"total":490,"current":422}
+{"_e":"metro:bundling:progress","_t":1791174489292,"id":"2","progress":0.7446557147329349,"total":518,"current":447}
+{"_e":"metro:bundling:progress","_t":1791174489392,"id":"2","progress":0.7789399678604224,"total":528,"current":466}
+{"_e":"metro:bundling:progress","_t":1791174489492,"id":"2","progress":0.8113001603044482,"total":554,"current":499}
+{"_e":"metro:bundling:progress","_t":1791174489618,"id":"2","progress":0.8113001603044482,"total":582,"current":521}
+{"_e":"metro:bundling:progress","_t":1791174489718,"id":"2","progress":0.8808539640842816,"total":602,"current":565}
+{"_e":"metro:bundling:progress","_t":1791174489819,"id":"2","progress":0.9641431137465375,"total":608,"current":597}
+{"_e":"metro:bundling:progress","_t":1791174489922,"id":"2","progress":0.9641431137465375,"total":631,"current":619}
+{"_e":"metro:bundling:progress","_t":1791174490032,"id":"2","progress":0.9968379466431662,"total":632,"current":631}
+{"_e":"metro:bundling:progress","_t":1791174490895,"id":"2","progress":0.999,"total":632,"current":632}
+{"_e":"metro:bundling:done","_t":1791174491032,"id":"2","total":632,"ms":4981.4887}
+{"_e":"metro:client_log","_t":1791174491185,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174491186,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174497302,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174497438,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174497438,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791174555040,"id":"3","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174555040,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791174555071,"id":"3","total":1,"ms":30.9126}
+{"_e":"metro:client_log","_t":1791174555284,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174555285,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174559600,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174559686,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174559686,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791174583914,"id":"6","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174583914,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791174583942,"id":"6","total":1,"ms":27.8148}
+{"_e":"metro:client_log","_t":1791174584083,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791174584084,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174584084,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174588911,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174588964,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174588964,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791174595971,"id":"9","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174595972,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791174596004,"id":"9","total":1,"ms":32.633}
+{"_e":"metro:client_log","_t":1791174596154,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174596154,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174601070,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174601127,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174601127,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791174723375,"id":"a","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174723375,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791174723403,"id":"a","total":1,"ms":28.365}
+{"_e":"metro:client_log","_t":1791174723622,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174723622,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174727310,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174727820,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174727820,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"root:init","_t":1791174786047,"format":"v0-jsonl","version":"57.0.27"}
+{"_e":"env:mode","_t":1791174786047,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791174786050,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1791174786249,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791174786565,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791174786812,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791174793736,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1791174795584,"id":"2","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791174795585,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791174795587,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791174796052,"id":"2","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1791174796154,"id":"2","progress":0.17361111111111113,"total":12,"current":5}
+{"_e":"metro:bundling:progress","_t":1791174796266,"id":"2","progress":0.308641975308642,"total":18,"current":10}
+{"_e":"metro:bundling:progress","_t":1791174796399,"id":"2","progress":0.37345679012345684,"total":18,"current":11}
+{"_e":"metro:bundling:progress","_t":1791174796776,"id":"2","progress":0.4444444444444444,"total":18,"current":12}
+{"_e":"metro:bundling:progress","_t":1791174796876,"id":"2","progress":0.4444444444444444,"total":70,"current":28}
+{"_e":"metro:bundling:progress","_t":1791174796986,"id":"2","progress":0.4444444444444444,"total":90,"current":34}
+{"_e":"metro:bundling:progress","_t":1791174797086,"id":"2","progress":0.4444444444444444,"total":98,"current":46}
+{"_e":"metro:bundling:progress","_t":1791174797188,"id":"2","progress":0.4444444444444444,"total":120,"current":68}
+{"_e":"metro:bundling:progress","_t":1791174797288,"id":"2","progress":0.4444444444444444,"total":176,"current":84}
+{"_e":"metro:bundling:progress","_t":1791174797388,"id":"2","progress":0.4444444444444444,"total":226,"current":99}
+{"_e":"metro:bundling:progress","_t":1791174797488,"id":"2","progress":0.4444444444444444,"total":251,"current":130}
+{"_e":"metro:bundling:progress","_t":1791174797589,"id":"2","progress":0.4444444444444444,"total":283,"current":164}
+{"_e":"metro:bundling:progress","_t":1791174797689,"id":"2","progress":0.4444444444444444,"total":331,"current":192}
+{"_e":"metro:bundling:progress","_t":1791174797790,"id":"2","progress":0.4444444444444444,"total":344,"current":227}
+{"_e":"metro:bundling:progress","_t":1791174797890,"id":"2","progress":0.563527866391443,"total":365,"current":274}
+{"_e":"metro:bundling:progress","_t":1791174797990,"id":"2","progress":0.563527866391443,"total":406,"current":302}
+{"_e":"metro:bundling:progress","_t":1791174798092,"id":"2","progress":0.6017782990956646,"total":437,"current":339}
+{"_e":"metro:bundling:progress","_t":1791174798194,"id":"2","progress":0.6245017595518529,"total":472,"current":373}
+{"_e":"metro:bundling:progress","_t":1791174798295,"id":"2","progress":0.7122389519709574,"total":487,"current":411}
+{"_e":"metro:bundling:progress","_t":1791174798395,"id":"2","progress":0.7380991748551271,"total":504,"current":433}
+{"_e":"metro:bundling:progress","_t":1791174798497,"id":"2","progress":0.7924087005913997,"total":519,"current":462}
+{"_e":"metro:bundling:progress","_t":1791174798599,"id":"2","progress":0.820976160678856,"total":543,"current":492}
+{"_e":"metro:bundling:progress","_t":1791174798705,"id":"2","progress":0.831974820932725,"total":569,"current":519}
+{"_e":"metro:bundling:progress","_t":1791174798805,"id":"2","progress":0.8467749141735439,"total":589,"current":542}
+{"_e":"metro:bundling:progress","_t":1791174798905,"id":"2","progress":0.9274175552573971,"total":595,"current":573}
+{"_e":"metro:bundling:progress","_t":1791174799014,"id":"2","progress":0.9708988954789971,"total":614,"current":605}
+{"_e":"metro:bundling:progress","_t":1791174799128,"id":"2","progress":0.9905288615606472,"total":632,"current":629}
+{"_e":"metro:bundling:progress","_t":1791174799229,"id":"2","progress":0.9968379466431662,"total":632,"current":631}
+{"_e":"metro:bundling:progress","_t":1791174799678,"id":"2","progress":0.999,"total":632,"current":632}
+{"_e":"metro:bundling:progress","_t":1791174799790,"id":"2","progress":0.999,"total":634,"current":634}
+{"_e":"metro:bundling:done","_t":1791174799873,"id":"2","total":634,"ms":4288.576}
+{"_e":"metro:client_log","_t":1791174800100,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791174800101,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791174806616,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791174806776,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791174806776,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"root:init","_t":1791175176850,"format":"v0-jsonl","version":"57.0.27"}
+{"_e":"env:mode","_t":1791175176851,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791175176854,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1791175178720,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791175179201,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791175180023,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791175187120,"atlas":false,"workers":8,"host":"::","port":8082}
+{"_e":"metro:bundling:started","_t":1791175232940,"id":"2","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791175232940,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791175232944,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791175233043,"id":"2","progress":0.14905463867969876,"total":158,"current":61}
+{"_e":"metro:bundling:progress","_t":1791175233144,"id":"2","progress":0.34059661381349093,"total":305,"current":178}
+{"_e":"metro:bundling:progress","_t":1791175233244,"id":"2","progress":0.70688466063532,"total":471,"current":396}
+{"_e":"metro:bundling:progress","_t":1791175233356,"id":"2","progress":0.8494694444444444,"total":600,"current":553}
+{"_e":"metro:bundling:done","_t":1791175233439,"id":"2","total":600,"ms":499.1862}
+{"_e":"metro:client_log","_t":1791175233644,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791175233644,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791175436426,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791175437292,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791175437293,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:failed","_t":1791175537682,"id":null,"message":"SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };","importStack":null,"filename":"src\\components\\NavigationBar.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1791175537686,"level":"error","data":["[TransformError: SyntaxError: E:\\Project\\aplikasi-rt-mobile\\src\\components\\NavigationBar.js: Unexpected token, expected \",\" (51:84)\n\n  49 |           <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />\n  50 |         ) : (\n> 51 |           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;\n     |                                                                                     ^\n  52 |         );\n  53 |     }\n  54 |   };]"]}
+{"_e":"metro:bundling:started","_t":1791175696276,"id":"4","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791175696276,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791175696309,"id":"4","total":1,"ms":33.0729}
+{"_e":"metro:client_log","_t":1791175696533,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791175696533,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791175701950,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791175702072,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791175702073,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791176064222,"id":"5","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791176064222,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791176064250,"id":"5","total":1,"ms":28.2126}
+{"_e":"metro:client_log","_t":1791176064461,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791176064461,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791176064461,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791176068701,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791176068775,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791176068775,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791176148763,"id":"8","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791176148764,"id":"8","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791176148791,"id":"8","total":1,"ms":27.6374}
+{"_e":"metro:client_log","_t":1791176149090,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791176149090,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791176149090,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791176153171,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791176153461,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791176153461,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791176182947,"id":"b","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791176182947,"id":"b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791176182975,"id":"b","total":1,"ms":27.6315}
+{"_e":"metro:client_log","_t":1791176183179,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791176183179,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791176183179,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791176188301,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791176188467,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791176188467,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791176477016,"id":"d","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791176477016,"id":"d","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791176477043,"id":"d","total":1,"ms":26.6362}
+{"_e":"metro:client_log","_t":1791176477268,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791176477268,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791176477268,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791176481044,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791176481616,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791176481617,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791176590989,"id":"f","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791176590989,"id":"f","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791176591017,"id":"f","total":1,"ms":27.6032}
+{"_e":"metro:client_log","_t":1791176591228,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791176591228,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791176591228,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791176594908,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791176595015,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791176595016,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:client_log","_t":1791176596794,"level":"log","data":["=== TOMBOL KELUAR DIKLIK ==="]}
+{"_e":"metro:client_log","_t":1791176601842,"level":"log","data":["=== TOMBOL KELUAR DIKLIK ==="]}
+{"_e":"metro:client_log","_t":1791176644476,"level":"log","data":["=== TOMBOL KELUAR DIKLIK ==="]}
+{"_e":"metro:bundling:failed","_t":1791177109382,"id":null,"message":"Unable to resolve \"../../lib/supabase\" from \"src\\screens\\satpam\\SatpamScannerScreen.js\"\n  1 | import React, { useState } from 'react';\n  2 | import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';\n> 3 | import { supabase } from '../../lib/supabase'; // Sesuaikan path supabase Anda\n    |                           ^\n  4 |\n  5 | export default function SatpamScannerScreen({ user, tenantCode }) {\n  6 |   const [guestName, setGuestName] = useState('');","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\screens\\satpam\\SatpamScannerScreen.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../../lib/supabase\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamScannerScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../../lib/supabase","originModulePath":"src\\screens\\satpam\\SatpamScannerScreen.js"}
+{"_e":"metro:client_log","_t":1791177109383,"level":"error","data":["[UnableToResolveError: Unable to resolve module ../../lib/supabase from E:\\Project\\aplikasi-rt-mobile\\src\\screens\\satpam\\SatpamScannerScreen.js: \n\nNone of these files exist:\n  * src\\lib\\supabase(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css)\n  * src\\lib\\supabase\n  1 | import React, { useState } from 'react';\n  2 | import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';\n> 3 | import { supabase } from '../../lib/supabase'; // Sesuaikan path supabase Anda\n    |                           ^\n  4 |\n  5 | export default function SatpamScannerScreen({ user, tenantCode }) {\n  6 |   const [guestName, setGuestName] = useState('');]"]}
+{"_e":"metro:bundling:started","_t":1791177118159,"id":"h","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791177118159,"id":"h","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791177118161,"id":"h","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1791177118166,"id":"h","message":"Unable to resolve \"../../lib/supabase\" from \"src\\screens\\satpam\\SatpamScannerScreen.js\"\n  1 | import React, { useState } from 'react';\n  2 | import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';\n> 3 | import { supabase } from '../../lib/supabase'; // Sesuaikan path supabase Anda\n    |                           ^\n  4 |\n  5 | export default function SatpamScannerScreen({ user, tenantCode }) {\n  6 |   const [guestName, setGuestName] = useState('');","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\screens\\satpam\\SatpamScannerScreen.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../../lib/supabase\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamScannerScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../../lib/supabase","originModulePath":"src\\screens\\satpam\\SatpamScannerScreen.js"}
+{"_e":"metro:bundling:started","_t":1791177517450,"id":"j","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791177517450,"id":"j","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791177517451,"id":"j","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1791177517484,"id":"j","message":"Unable to resolve \"../../lib/supabase\" from \"src\\screens\\satpam\\SatpamScannerScreen.js\"\n  1 | import React, { useState } from 'react';\n  2 | import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView, Alert, SafeAreaView } from 'react-native';\n> 3 | import { supabase } from '../../lib/supabase'; // Sesuaikan path supabase Anda\n    |                           ^\n  4 |\n  5 | export default function SatpamScannerScreen({ user, tenantCode, navigation }) {\n  6 |   const [guestName, setGuestName] = useState('');","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\screens\\satpam\\SatpamScannerScreen.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../../lib/supabase\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamScannerScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../../lib/supabase","originModulePath":"src\\screens\\satpam\\SatpamScannerScreen.js"}
+{"_e":"metro:bundling:started","_t":1791177518342,"id":"l","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791177518342,"id":"l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791177518343,"id":"l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1791177518346,"id":"l","message":"Unable to resolve \"../../lib/supabase\" from \"src\\screens\\satpam\\SatpamScannerScreen.js\"\n  1 | import React, { useState } from 'react';\n  2 | import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView, Alert, SafeAreaView } from 'react-native';\n> 3 | import { supabase } from '../../lib/supabase'; // Sesuaikan path supabase Anda\n    |                           ^\n  4 |\n  5 | export default function SatpamScannerScreen({ user, tenantCode, navigation }) {\n  6 |   const [guestName, setGuestName] = useState('');","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\screens\\satpam\\SatpamScannerScreen.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../../lib/supabase\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamScannerScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../../lib/supabase","originModulePath":"src\\screens\\satpam\\SatpamScannerScreen.js"}
+{"_e":"metro:bundling:started","_t":1791177518769,"id":"n","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791177518770,"id":"n","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791177518770,"id":"n","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1791177518776,"id":"n","message":"Unable to resolve \"../../lib/supabase\" from \"src\\screens\\satpam\\SatpamScannerScreen.js\"\n  1 | import React, { useState } from 'react';\n  2 | import { StyleSheet, View, Text, TextInput, TouchableOpacity, ScrollView, Alert, SafeAreaView } from 'react-native';\n> 3 | import { supabase } from '../../lib/supabase'; // Sesuaikan path supabase Anda\n    |                           ^\n  4 |\n  5 | export default function SatpamScannerScreen({ user, tenantCode, navigation }) {\n  6 |   const [guestName, setGuestName] = useState('');","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\screens\\satpam\\SatpamScannerScreen.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../../lib/supabase\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/satpam/SatpamScannerScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../../lib/supabase","originModulePath":"src\\screens\\satpam\\SatpamScannerScreen.js"}
+{"_e":"metro:bundling:started","_t":1791177664533,"id":"p","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791177664533,"id":"p","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791177664534,"id":"p","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791177664597,"id":"p","total":1,"ms":63.7118}
+{"_e":"metro:client_log","_t":1791177664813,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791177664813,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791177664813,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791177668671,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791177669389,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791177669390,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791177778090,"id":"r","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791177778090,"id":"r","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791177778128,"id":"r","total":1,"ms":38.6619}
+{"_e":"metro:client_log","_t":1791177778298,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791177778299,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791177778299,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791177782899,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791177783410,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791177783410,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:client_log","_t":1791177820360,"level":"error","data":["Gagal memuat riwayat:","column guest_logs.check_in does not exist","\n\n\u001b[1mCode: SatpamScannerScreen.js\u001b[22m\n\u001b[0m \u001b[90m 30 |\u001b[39m       setGuestList(data \u001b[33m||\u001b[39m [])\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     } \u001b[36mcatch\u001b[39m (err) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m'Gagal memuat riwayat:'\u001b[39m\u001b[33m,\u001b[39m err\u001b[33m.\u001b[39mmessage)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     } \u001b[36mfinally\u001b[39m {\n \u001b[90m 34 |\u001b[39m       setRefreshing(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m     }\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  fetchGuestLogs (src\\screens\\satpam\\SatpamScannerScreen.js:32:15)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1791178080886,"id":"u","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791178080886,"id":"u","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791178080913,"id":"u","total":1,"ms":26.6283}
+{"_e":"metro:client_log","_t":1791178081124,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791178081124,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791178081125,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791178092846,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791178092921,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791178092921,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:client_log","_t":1791178181784,"level":"warn","data":["[expo-image-picker] `ImagePicker.MediaTypeOptions` have been deprecated. Use `ImagePicker.MediaType` or an array of `ImagePicker.MediaType` instead."]}
+{"_e":"metro:client_log","_t":1791179104480,"level":"error","data":["Gagal memuat aduan:","column reports.tenant_code does not exist","\n\n\u001b[1mCode: AdminComplaintScreen.js\u001b[22m\n\u001b[0m \u001b[90m 21 |\u001b[39m       setComplaints(data \u001b[33m||\u001b[39m [])\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m     } \u001b[36mcatch\u001b[39m (err) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m'Gagal memuat aduan:'\u001b[39m\u001b[33m,\u001b[39m err\u001b[33m.\u001b[39mmessage)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m     } \u001b[36mfinally\u001b[39m {\n \u001b[90m 25 |\u001b[39m       setLoading(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m       setRefreshing(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  fetchComplaints (src\\screens\\admin\\AdminComplaintScreen.js:23:15)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1791179110282,"level":"error","data":["Gagal memuat aduan:","column reports.tenant_code does not exist","\n\n\u001b[1mCode: AdminComplaintScreen.js\u001b[22m\n\u001b[0m \u001b[90m 21 |\u001b[39m       setComplaints(data \u001b[33m||\u001b[39m [])\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m     } \u001b[36mcatch\u001b[39m (err) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m'Gagal memuat aduan:'\u001b[39m\u001b[33m,\u001b[39m err\u001b[33m.\u001b[39mmessage)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m     } \u001b[36mfinally\u001b[39m {\n \u001b[90m 25 |\u001b[39m       setLoading(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m       setRefreshing(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  fetchComplaints (src\\screens\\admin\\AdminComplaintScreen.js:23:15)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1791179270222,"id":"z","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791179270222,"id":"z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791179270256,"id":"z","total":1,"ms":34.5578}
+{"_e":"metro:client_log","_t":1791179270482,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791179270482,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1791179272882,"id":"10","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791179272882,"id":"10","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791179272919,"id":"10","total":1,"ms":37.0294}
+{"_e":"metro:client_log","_t":1791179273061,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1791179273061,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791179273061,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791179286522,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791179286614,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791179286614,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791179318846,"id":"13","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791179318846,"id":"13","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791179318877,"id":"13","total":1,"ms":30.1526}
+{"_e":"metro:client_log","_t":1791179319032,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791179319032,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791179329815,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791179329880,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791179329880,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:client_log","_t":1791179433183,"level":"error","data":["Gagal memuat aduan:","column reports.tenant_code does not exist","\n\n\u001b[1mCode: AdminComplaintScreen.js\u001b[22m\n\u001b[0m \u001b[90m 21 |\u001b[39m       setComplaints(data \u001b[33m||\u001b[39m [])\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m     } \u001b[36mcatch\u001b[39m (err) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m'Gagal memuat aduan:'\u001b[39m\u001b[33m,\u001b[39m err\u001b[33m.\u001b[39mmessage)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m     } \u001b[36mfinally\u001b[39m {\n \u001b[90m 25 |\u001b[39m       setLoading(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m       setRefreshing(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  fetchComplaints (src\\screens\\admin\\AdminComplaintScreen.js:23:15)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1791179592157,"level":"error","data":["Gagal memuat aduan:","column reports.tenant_code does not exist","\n\n\u001b[1mCode: AdminComplaintScreen.js\u001b[22m\n\u001b[0m \u001b[90m 12 |\u001b[39m     \u001b[36mtry\u001b[39m {\n \u001b[90m 13 |\u001b[39m       setLoading(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m       \u001b[36mconst\u001b[39m { data\u001b[33m,\u001b[39m error } \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m supabase\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 15 |\u001b[39m         \u001b[33m.\u001b[39m\u001b[36mfrom\u001b[39m(\u001b[32m'reports'\u001b[39m) \u001b[90m// Sesuaikan nama tabel aduan/laporan Anda (misal: 'reports' atau 'complaints')\u001b[39m\n \u001b[90m 16 |\u001b[39m         \u001b[33m.\u001b[39mselect(\u001b[32m'*'\u001b[39m)\n \u001b[90m 17 |\u001b[39m         \u001b[33m.\u001b[39meq(\u001b[32m'tenant_code'\u001b[39m\u001b[33m,\u001b[39m tenantCode \u001b[33m||\u001b[39m \u001b[32m'UMUM'\u001b[39m)\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  fetchComplaints (src\\screens\\admin\\AdminComplaintScreen.js:14:31)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1791179737501,"id":"17","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791179737502,"id":"17","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791179737533,"id":"17","total":1,"ms":31.2507}
+{"_e":"metro:client_log","_t":1791179737762,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791179737762,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791179748366,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791179748994,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791179748995,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:started","_t":1791179847891,"id":"19","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791179847891,"id":"19","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791179847922,"id":"19","total":1,"ms":30.8231}
+{"_e":"metro:client_log","_t":1791179848131,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791179848131,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791179856445,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791179856874,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791179856874,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"root:init","_t":1791180053624,"format":"v0-jsonl","version":"57.0.27"}
+{"_e":"env:mode","_t":1791180053625,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791180053627,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1791180053916,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791180054280,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791180055141,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791180062039,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1791180083959,"id":"2","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791180083960,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791180083964,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791180084063,"id":"2","progress":0.15311909262759926,"total":161,"current":63}
+{"_e":"metro:bundling:progress","_t":1791180084163,"id":"2","progress":0.3345828527489428,"total":306,"current":177}
+{"_e":"metro:bundling:progress","_t":1791180084263,"id":"2","progress":0.6761276359651335,"total":467,"current":384}
+{"_e":"metro:bundling:progress","_t":1791180084363,"id":"2","progress":0.8250437419470139,"total":589,"current":535}
+{"_e":"metro:bundling:done","_t":1791180084478,"id":"2","total":589,"ms":518.1892}
+{"_e":"metro:client_log","_t":1791180084683,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791180084713,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791180092783,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791180093164,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791180093164,"level":"log","data":["Wilayah memicu validasi database..."]}
+{"_e":"metro:bundling:failed","_t":1791180185114,"id":null,"message":"Unable to resolve \"./AdminPatrolScreen\" from \"src\\screens\\admin\\AdminDashboardScreen.js\"\n  10 | import AdminComplaintScreen from './AdminComplaintScreen';\n  11 | import AdminAssetScreen from './AdminAssetScreen';\n> 12 | import AdminPatrolScreen from './AdminPatrolScreen';       // Modul Tambahan: Jadwal Ronda\n     |                                ^\n  13 | import AdminLetterScreen from './AdminLetterScreen';       // Modul Tambahan: Surat Pengantar\n  14 | import AdminDonationScreen from './AdminDonationScreen';   // Modul Tambahan: Donasi Warga\n  15 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\screens\\admin\\AdminDashboardScreen.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./AdminPatrolScreen\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/admin/AdminDashboardScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"./AdminPatrolScreen","originModulePath":"src\\screens\\admin\\AdminDashboardScreen.js"}
+{"_e":"metro:client_log","_t":1791180185119,"level":"error","data":["[UnableToResolveError: Unable to resolve module ./AdminPatrolScreen from E:\\Project\\aplikasi-rt-mobile\\src\\screens\\admin\\AdminDashboardScreen.js: \n\nNone of these files exist:\n  * src\\screens\\admin\\AdminPatrolScreen(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css)\n  * src\\screens\\admin\\AdminPatrolScreen\n  10 | import AdminComplaintScreen from './AdminComplaintScreen';\n  11 | import AdminAssetScreen from './AdminAssetScreen';\n> 12 | import AdminPatrolScreen from './AdminPatrolScreen';       // Modul Tambahan: Jadwal Ronda\n     |                                ^\n  13 | import AdminLetterScreen from './AdminLetterScreen';       // Modul Tambahan: Surat Pengantar\n  14 | import AdminDonationScreen from './AdminDonationScreen';   // Modul Tambahan: Donasi Warga\n  15 |]"]}
+{"_e":"metro:bundling:failed","_t":1791180185323,"id":null,"message":"Unable to resolve \"./AdminPatrolScreen\" from \"src\\screens\\admin\\AdminDashboardScreen.js\"\n  10 | import AdminComplaintScreen from './AdminComplaintScreen';\n  11 | import AdminAssetScreen from './AdminAssetScreen';\n> 12 | import AdminPatrolScreen from './AdminPatrolScreen';       // Modul Tambahan: Jadwal Ronda\n     |                                ^\n  13 | import AdminLetterScreen from './AdminLetterScreen';       // Modul Tambahan: Surat Pengantar\n  14 | import AdminDonationScreen from './AdminDonationScreen';   // Modul Tambahan: Donasi Warga\n  15 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\screens\\admin\\AdminDashboardScreen.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./AdminPatrolScreen\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/admin/AdminDashboardScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"./AdminPatrolScreen","originModulePath":"src\\screens\\admin\\AdminDashboardScreen.js"}
+{"_e":"metro:client_log","_t":1791180185325,"level":"error","data":["[UnableToResolveError: Unable to resolve module ./AdminPatrolScreen from E:\\Project\\aplikasi-rt-mobile\\src\\screens\\admin\\AdminDashboardScreen.js: \n\nNone of these files exist:\n  * src\\screens\\admin\\AdminPatrolScreen(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css)\n  * src\\screens\\admin\\AdminPatrolScreen\n  10 | import AdminComplaintScreen from './AdminComplaintScreen';\n  11 | import AdminAssetScreen from './AdminAssetScreen';\n> 12 | import AdminPatrolScreen from './AdminPatrolScreen';       // Modul Tambahan: Jadwal Ronda\n     |                                ^\n  13 | import AdminLetterScreen from './AdminLetterScreen';       // Modul Tambahan: Surat Pengantar\n  14 | import AdminDonationScreen from './AdminDonationScreen';   // Modul Tambahan: Donasi Warga\n  15 |]"]}
+{"_e":"metro:bundling:started","_t":1791180188650,"id":"3","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791180188650,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791180188651,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1791180188657,"id":"3","message":"Unable to resolve \"./AdminPatrolScreen\" from \"src\\screens\\admin\\AdminDashboardScreen.js\"\n  10 | import AdminComplaintScreen from './AdminComplaintScreen';\n  11 | import AdminAssetScreen from './AdminAssetScreen';\n> 12 | import AdminPatrolScreen from './AdminPatrolScreen';       // Modul Tambahan: Jadwal Ronda\n     |                                ^\n  13 | import AdminLetterScreen from './AdminLetterScreen';       // Modul Tambahan: Surat Pengantar\n  14 | import AdminDonationScreen from './AdminDonationScreen';   // Modul Tambahan: Donasi Warga\n  15 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\screens\\admin\\AdminDashboardScreen.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./AdminPatrolScreen\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\components\\NavigationBar.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../screens/admin/AdminDashboardScreen\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./src/components/NavigationBar\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"./AdminPatrolScreen","originModulePath":"src\\screens\\admin\\AdminDashboardScreen.js"}
+{"_e":"metro:bundling:started","_t":1791180299630,"id":"6","platform":"web","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1791180299630,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791180299631,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791180299741,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791180300239,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791180300289,"id":"6","total":1,"ms":658.2816}
+{"_e":"metro:client_log","_t":1791180300538,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1791180300538,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1791180309336,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1791180309789,"level":"log","data":["Database Check Warning:","column tenants.tenant_code does not exist"]}
+{"_e":"metro:client_log","_t":1791180309790,"level":"log","data":["Wilayah memicu validasi database..."]}

@@ -77,7 +77,7 @@ export default function RegisterScreen({ tenantCode, navigation }) {
               style={styles.eyeButton}
               onPress={() => setShowPassword(!showPassword)}
             >
-              <Text style={styles.eyeIcon}>{showPassword ? '👁️' : '🙈'}</Text>
+              <Text style={styles.eyeIcon}>{showPassword ? '👁' : '👁‍🗨'}</Text>
             </TouchableOpacity>
           </View>
 
