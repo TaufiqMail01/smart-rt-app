@@ -7,427 +7,279 @@ import {
   TouchableOpacity,
   ScrollView,
   Alert,
-  Modal,
   StatusBar,
   ActivityIndicator,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import * as Location from 'expo-location';
+
+export const ROLE_PERMISSIONS = {
+  super_admin: {
+    'warga.view': true, 'warga.create': true, 'warga.update': true, 'warga.delete': true, 'warga.verify': true,
+    'surat.create': true, 'surat.approve': true, 'pengumuman.create': true, 'kegiatan.create': true,
+    'keuangan.view': true, 'keuangan.create': true, 'keuangan.delete': true, 'pengurus.manage': true,
+    'laporan.view': true, 'settings.update': true,
+  },
+  ketua_rt: {
+    'warga.view': true, 'warga.create': true, 'warga.update': true, 'warga.delete': true, 'warga.verify': true,
+    'surat.create': true, 'surat.approve': true, 'pengumuman.create': true, 'kegiatan.create': true,
+    'keuangan.view': true, 'keuangan.create': true, 'keuangan.delete': true, 'pengurus.manage': true,
+    'laporan.view': true, 'settings.update': true,
+  },
+  sekretaris: {
+    'warga.view': true, 'warga.create': true, 'warga.update': true, 'warga.delete': false, 'warga.verify': true,
+    'surat.create': true, 'surat.approve': true, 'pengumuman.create': true, 'kegiatan.create': true,
+    'keuangan.view': true, 'keuangan.create': false, 'keuangan.delete': false, 'pengurus.manage': false,
+    'laporan.view': true, 'settings.update': false,
+  },
+  bendahara: {
+    'warga.view': true, 'warga.create': false, 'warga.update': false, 'warga.delete': false, 'warga.verify': false,
+    'surat.create': false, 'surat.approve': false, 'pengumuman.create': false, 'kegiatan.create': false,
+    'keuangan.view': true, 'keuangan.create': true, 'keuangan.delete': true, 'pengurus.manage': false,
+    'laporan.view': true, 'settings.update': false,
+  },
+  pengurus: {
+    'warga.view': true, 'warga.create': false, 'warga.update': false, 'warga.delete': false, 'warga.verify': false,
+    'surat.create': false, 'surat.approve': false, 'pengumuman.create': false, 'kegiatan.create': true,
+    'keuangan.view': true, 'keuangan.create': false, 'keuangan.delete': false, 'pengurus.manage': false,
+    'laporan.view': true, 'settings.update': false,
+  },
+  warga: {
+    'warga.view': true, 'warga.create': false, 'warga.update': false, 'warga.delete': false, 'warga.verify': false,
+    'surat.create': true, 'surat.approve': false, 'pengumuman.create': false, 'kegiatan.create': false,
+    'keuangan.view': true, 'keuangan.create': false, 'keuangan.delete': false, 'pengurus.manage': false,
+    'laporan.view': true, 'settings.update': false,
+  },
+};
 
 export default function LoginScreen({ tenantCode, onLoginSuccess, onChangeTenant, navigation }) {
-  const [activeRole, setActiveRole] = useState('warga'); // 'warga', 'satpam', 'admin_rt'
-  const [email, setEmail] = useState('');
+  const [step, setStep] = useState('select_role'); 
+  const [selectedRole, setSelectedRole] = useState(null);
+  
+  const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // State Modal Lupa Password
-  const [isForgotPasswordVisible, setIsForgotPasswordVisible] = useState(false);
-  const [resetEmail, setResetEmail] = useState('');
+  const rolesList = [
+    { key: 'super_admin', title: '1. Super Admin', desc: 'Akses penuh sistem & manajemen global', icon: '👑' },
+    { key: 'ketua_rt', title: '2. Ketua RT', desc: 'Pengelolaan wilayah dan persetujuan utama', icon: '🏠' },
+    { key: 'sekretaris', title: '3. Sekretaris', desc: 'Pengelolaan data warga & persuratan', icon: '📋' },
+    { key: 'bendahara', title: '4. Bendahara', desc: 'Pencatatan kas dan iuran keuangan RT', icon: '💰' },
+    { key: 'pengurus', title: '5. Pengurus RT', desc: 'Operasional kegiatan & pemantauan', icon: '🛡️' },
+    { key: 'warga', title: '6. Warga', desc: 'Layanan mandiri, laporan, & informasi warga', icon: '👤' },
+  ];
 
-  // Handler Login + Aktifkan GPS Lokasi
+  const handleSelectRole = (roleKey) => {
+    setSelectedRole(roleKey);
+    setStep('input_credentials');
+    setIdentifier('');
+    setPassword('');
+  };
+
   const handleLogin = async () => {
-    if (!email.trim() || !password.trim()) {
-      Alert.alert('Peringatan', 'Harap isi email dan kata sandi Anda.');
+    if (!identifier.trim() || !password.trim()) {
+      Alert.alert('Peringatan', 'Harap isi data kredensial login Anda dengan lengkap.');
       return;
     }
 
     setLoading(true);
-
-    try {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        Alert.alert(
-          'Izin Lokasi Dibutuhkan',
-          'Aplikasi membutuhkan akses GPS lokasi agar fitur Tombol Darurat (SOS) dapat mengirim titik lokasi Anda ke Pos Satpam saat situasi darurat.'
-        );
-      } else {
-        await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
-      }
-    } catch (error) {
-      console.log('Error meminta izin GPS lokasi saat login:', error);
-    }
-
-    setLoading(false);
-
-    // 🟢 Memastikan objek role dikirim sesuai tab yang aktif (warga / satpam / admin_rt)
-    const loggedInUser = {
-      id: 'usr-123',
-      name: activeRole === 'admin_rt' ? 'Pak Taufiq (Pengurus)' : activeRole === 'satpam' ? 'Danru Satpam' : 'Warga RT',
-      block: 'Blok A No. 12',
-      email: email.trim(),
-      role: activeRole, // <-- Mengirimkan role yang dipilih saat login
-      status: 'approved',
-    };
-
-    Alert.alert('Berhasil Login', `Selamat datang kembali, ${loggedInUser.name}!`);
-    onLoginSuccess(loggedInUser);
+    setTimeout(() => {
+      setLoading(false);
+      const userData = {
+        name: `Akun ${selectedRole.toUpperCase().replace('_', ' ')}`,
+        phone: identifier.trim(),
+        role: selectedRole,
+        tenantCode: tenantCode,
+        permissions: ROLE_PERMISSIONS[selectedRole] || ROLE_PERMISSIONS['warga'],
+      };
+      onLoginSuccess(userData);
+    }, 800);
   };
 
-  const handleSendResetPassword = () => {
-    if (!resetEmail.trim()) {
-      Alert.alert('Peringatan', 'Harap masukkan alamat email Anda.');
-      return;
-    }
+  if (step === 'select_role') {
+    return (
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#0B579D" />
+        <View style={styles.headerFrame}>
+          <Text style={styles.headerTitle}>Pilih Peran Akses Anda</Text>
+          <Text style={styles.headerSubtitle}>Silakan tentukan peran Anda untuk melanjutkan ke menu login</Text>
+        </View>
 
-    setIsForgotPasswordVisible(false);
-    Alert.alert(
-      'Tautan Dikirimkan',
-      `Instruksi pemulihan kata sandi telah dikirimkan ke email ${resetEmail.trim()}. Silakan periksa kotak masuk Anda.`
+        <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+          <View style={styles.gridContainer}>
+            {rolesList.map((item) => (
+              <TouchableOpacity
+                key={item.key}
+                style={styles.roleCardButton}
+                onPress={() => handleSelectRole(item.key)}
+                activeOpacity={0.7}
+              >
+                <View style={styles.roleIconContainer}>
+                  <Text style={styles.roleEmoji}>{item.icon}</Text>
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.roleCardTitle}>{item.title}</Text>
+                  <Text style={styles.roleCardDesc}>{item.desc}</Text>
+                </View>
+                <Text style={styles.roleChevron}>›</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     );
-    setResetEmail('');
-  };
+  }
+
+  const activeRoleLabel = rolesList.find(r => r.key === selectedRole)?.title || '';
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F3F6FA" />
+      <StatusBar barStyle="light-content" backgroundColor="#0B579D" />
+      <View style={styles.headerFrame}>
+        <TouchableOpacity onPress={() => setStep('select_role')} style={styles.backBtn} activeOpacity={0.7}>
+          <Text style={styles.backText}>Pilih Akses</Text>
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Login {activeRoleLabel}</Text>
+        <Text style={styles.headerSubtitle}>Masukkan kredensial yang terdaftar di sistem</Text>
+      </View>
 
-      <ScrollView
-        contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-      >
-        <View style={styles.centerContainer}>
-          
-          {/* Header Smart RT */}
-          <View style={styles.headerBox}>
-            <Text style={styles.appTitle}>SMART RT</Text>
-
-            <TouchableOpacity style={styles.tenantBadge} onPress={onChangeTenant} activeOpacity={0.7}>
-              <Text style={styles.tenantBadgeText}>📍 Wilayah: {tenantCode || 'RT006-RW012-KEDIP'} (Ganti)</Text>
-            </TouchableOpacity>
+      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+        <View style={styles.card}>
+          <View style={styles.selectedRoleBadge}>
+            <Text style={styles.selectedRoleText}>Peran Aktif: {activeRoleLabel}</Text>
           </View>
 
-          {/* Tab Pilihan Peran */}
-          <View style={styles.tabContainer}>
-            <TouchableOpacity
-              style={[styles.tabButton, activeRole === 'warga' && styles.tabButtonActive]}
-              onPress={() => setActiveRole('warga')}
-            >
-              <Text style={[styles.tabText, activeRole === 'warga' && styles.tabTextActive]}>Warga</Text>
-            </TouchableOpacity>
+          <Text style={styles.label}>
+            {selectedRole === 'super_admin' ? 'Nomor WhatsApp / ID Admin:' : 'Nomor WhatsApp Terdaftar:'}
+          </Text>
+          <TextInput
+            style={styles.input}
+            placeholder="081234567890"
+            placeholderTextColor="#94A3B8"
+            value={identifier}
+            onChangeText={setIdentifier}
+            keyboardType="phone-pad"
+          />
 
-            <TouchableOpacity
-              style={[styles.tabButton, activeRole === 'satpam' && styles.tabButtonActive]}
-              onPress={() => setActiveRole('satpam')}
-            >
-              <Text style={[styles.tabText, activeRole === 'satpam' && styles.tabTextActive]}>Satpam</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={[styles.tabButton, activeRole === 'admin_rt' && styles.tabButtonActive]}
-              onPress={() => setActiveRole('admin_rt')}
-            >
-              <Text style={[styles.tabText, activeRole === 'admin_rt' && styles.tabTextActive]}>Pengurus</Text>
-            </TouchableOpacity>
-          </View>
-
-          {/* Card Form Login */}
-          <View style={styles.card}>
-            <Text style={styles.formTitle}>
-              Login Akun {activeRole === 'warga' ? 'Warga' : activeRole === 'satpam' ? 'Satpam / Pos Jaga' : 'Pengurus RT'}
-            </Text>
-
-            <Text style={styles.label}>Email Terdaftar:</Text>
+          <Text style={styles.label}>Kata Sandi:</Text>
+          <View style={styles.passwordContainer}>
             <TextInput
-              style={styles.input}
-              placeholder="contoh: fulan@gmail.com"
-              value={email}
-              onChangeText={setEmail}
-              keyboardType="email-address"
-              autoCapitalize="none"
+              style={styles.passwordInput}
+              placeholder="Masukkan kata sandi"
+              placeholderTextColor="#94A3B8"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry={!showPassword}
             />
+            <TouchableOpacity
+              style={styles.eyeButton}
+              onPress={() => setShowPassword(!showPassword)}
+              activeOpacity={0.7}
+            >
+              <Text style={styles.eyeButtonText}>{showPassword ? 'Sembunyi' : 'Lihat'}</Text>
+            </TouchableOpacity>
+          </View>
 
-            {/* Input Password + Eye Button */}
-            <Text style={styles.label}>Kata Sandi:</Text>
-            <View style={styles.passwordContainer}>
-              <TextInput
-                style={styles.passwordInput}
-                placeholder="••••••••"
-                value={password}
-                onChangeText={setPassword}
-                secureTextEntry={!showPassword}
-              />
-              <TouchableOpacity style={styles.eyeButton} onPress={() => setShowPassword(!showPassword)}>
-                <Text style={styles.eyeIcon}>{showPassword ? '👁' : '👁‍🗨'}</Text>
+          <TouchableOpacity style={styles.btnLogin} onPress={handleLogin} activeOpacity={0.8} disabled={loading}>
+            {loading ? <ActivityIndicator color="#FFFFFF" size="small" /> : <Text style={styles.btnLoginText}>MASUK SEKARANG</Text>}
+          </TouchableOpacity>
+
+          {selectedRole === 'warga' && (
+            <View style={styles.registerContainer}>
+              <Text style={styles.registerLabel}>Belum punya akun warga?</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Register')} activeOpacity={0.7}>
+                <Text style={styles.registerLink}>Daftar Akun Warga Baru</Text>
               </TouchableOpacity>
             </View>
-
-            {/* Link Lupa Password */}
-            <TouchableOpacity style={styles.forgotPasswordRow} onPress={() => setIsForgotPasswordVisible(true)}>
-              <Text style={styles.forgotPasswordText}>Lupa kata sandi?</Text>
-            </TouchableOpacity>
-
-            {/* Tombol Masuk */}
-            <TouchableOpacity style={styles.btnLogin} onPress={handleLogin} activeOpacity={0.8} disabled={loading}>
-              {loading ? (
-                <ActivityIndicator color="#FFFFFF" size="small" />
-              ) : (
-                <Text style={styles.btnLoginText}>MASUK KE APLIKASI</Text>
-              )}
-            </TouchableOpacity>
-
-            {/* Link Pendaftaran Mandiri Warga */}
-            {activeRole === 'warga' && (
-              <View style={styles.registerRow}>
-                <Text style={styles.registerSubText}>Belum memiliki akun warga? </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                  <Text style={styles.registerLinkText}>Daftar Mandiri</Text>
-                </TouchableOpacity>
-              </View>
-            )}
-          </View>
-
+          )}
         </View>
       </ScrollView>
-
-      {/* Modal Dialog Lupa Password */}
-      <Modal visible={isForgotPasswordVisible} transparent animationType="fade">
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>Pemulihan Kata Sandi</Text>
-            <Text style={styles.modalSub}>
-              Masukkan email terdaftar Anda untuk menerima tautan pemulihan kata sandi.
-            </Text>
-
-            <TextInput
-              style={styles.input}
-              placeholder="Masukkan email Anda..."
-              value={resetEmail}
-              onChangeText={setResetEmail}
-              keyboardType="email-address"
-              autoCapitalize="none"
-            />
-
-            <View style={styles.modalBtnRow}>
-              <TouchableOpacity style={styles.btnCancelModal} onPress={() => setIsForgotPasswordVisible(false)}>
-                <Text style={styles.btnCancelText}>Batal</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity style={styles.btnSendModal} onPress={handleSendResetPassword}>
-                <Text style={styles.btnSendText}>Kirim Tautan</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F3F6FA',
+  container: { flex: 1, backgroundColor: '#F3F6FA' },
+  headerFrame: { 
+    backgroundColor: '#0B579D', 
+    paddingHorizontal: 20, 
+    paddingTop: 24, 
+    paddingBottom: 24, 
+    borderBottomLeftRadius: 28, 
+    borderBottomRightRadius: 28, 
+    alignItems: 'center' 
   },
-  scrollContent: {
-    flexGrow: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    paddingTop: 60,
-    paddingBottom: 40,
-  },
-  centerContainer: {
-    width: '100%',
-  },
-  headerBox: {
-    alignItems: 'center',
-    marginBottom: 28,
-  },
-  appTitle: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#0B579D',
-    letterSpacing: 1,
-  },
-  tenantBadge: {
-    backgroundColor: '#E0F2FE',
-    paddingHorizontal: 16,
+  headerTitle: { fontSize: 20, fontWeight: 'bold', color: '#FFFFFF', textAlign: 'center' },
+  headerSubtitle: { fontSize: 13, color: '#BAE6FD', marginTop: 4, textAlign: 'center' },
+  
+  // Tombol Ganti Peran Modern & Timbul
+  backBtn: { 
+    alignSelf: 'flex-start', 
+    marginBottom: 12,
+    backgroundColor: 'rgba(255, 255, 255, 0.18)', 
+    paddingHorizontal: 14,
     paddingVertical: 8,
-    borderRadius: 20,
-    marginTop: 12,
+    borderRadius: 20, 
     borderWidth: 1,
-    borderColor: '#BAE6FD',
-  },
-  tenantBadgeText: {
-    color: '#0284C7',
-    fontSize: 13,
-    fontWeight: 'bold',
-  },
-
-  /* Tab Peran */
-  tabContainer: {
-    flexDirection: 'row',
-    backgroundColor: '#E2E8F0',
-    borderRadius: 14,
-    padding: 6,
-    marginBottom: 20,
-  },
-  tabButton: {
-    flex: 1,
-    paddingVertical: 12,
-    alignItems: 'center',
-    borderRadius: 10,
-  },
-  tabButtonActive: {
-    backgroundColor: '#0B579D',
-    elevation: 2,
-  },
-  tabText: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    color: '#64748B',
-  },
-  tabTextActive: {
-    color: '#FFFFFF',
-  },
-
-  /* Form Card */
-  card: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 20,
-    padding: 22,
-    elevation: 4,
+    borderColor: 'rgba(255, 255, 255, 0.3)', 
+    elevation: 3,
     shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
   },
-  formTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#0F172A',
-    marginBottom: 20,
-  },
-  label: {
+  backText: { 
+    color: '#FFFFFF', 
+    fontWeight: 'bold', 
     fontSize: 13,
-    fontWeight: 'bold',
-    color: '#334155',
-    marginBottom: 8,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#CBD5E1',
-    borderRadius: 12,
-    paddingHorizontal: 14,
-    paddingVertical: 14,
-    fontSize: 14,
-    marginBottom: 16,
-    backgroundColor: '#F8FAFC',
-    color: '#0F172A',
+    letterSpacing: 0.3,
   },
 
-  /* Password Field */
-  passwordContainer: {
+  scrollContent: { padding: 20, paddingBottom: 40 },
+  gridContainer: { marginTop: 6 },
+  
+  // Kartu Pilihan Peran Modern & Timbul
+  roleCardButton: { 
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#CBD5E1',
-    borderRadius: 12,
-    backgroundColor: '#F8FAFC',
-    marginBottom: 10,
+    backgroundColor: '#FFFFFF', 
+    borderRadius: 18, 
+    padding: 16, 
+    marginBottom: 14, 
+    elevation: 4, 
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    borderWidth: 1, 
+    borderColor: '#E2E8F0' 
   },
-  passwordInput: {
-    flex: 1,
-    paddingHorizontal: 14,
-    paddingVertical: 14,
-    fontSize: 14,
-    color: '#0F172A',
-  },
-  eyeButton: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  eyeIcon: {
-    fontSize: 20,
-  },
-
-  forgotPasswordRow: {
-    alignItems: 'flex-end',
-    marginBottom: 22,
-  },
-  forgotPasswordText: {
-    color: '#0284C7',
-    fontSize: 13,
-    fontWeight: '600',
-  },
-
-  btnLogin: {
-    backgroundColor: '#0B579D',
-    paddingVertical: 16,
-    borderRadius: 12,
+  roleIconContainer: {
+    width: 46,
+    height: 46,
+    borderRadius: 14,
+    backgroundColor: '#F0F6FF',
+    justifyContent: 'center',
     alignItems: 'center',
-    elevation: 2,
+    marginRight: 14,
   },
-  btnLoginText: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-    fontSize: 15,
-    letterSpacing: 0.5,
-  },
+  roleEmoji: { fontSize: 22 },
+  roleCardTitle: { fontSize: 16, fontWeight: 'bold', color: '#0F172A', marginBottom: 2 },
+  roleCardDesc: { fontSize: 12, color: '#64748B', lineHeight: 16 },
+  roleChevron: { fontSize: 22, color: '#94A3B8', fontWeight: 'bold', marginLeft: 8 },
 
-  registerRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 20,
-  },
-  registerSubText: {
-    fontSize: 13,
-    color: '#64748B',
-  },
-  registerLinkText: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    color: '#0284C7',
-  },
-
-  /* Modal */
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(15, 23, 42, 0.5)',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  modalCard: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 20,
-    padding: 24,
-  },
-  modalTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#0F172A',
-    marginBottom: 6,
-  },
-  modalSub: {
-    fontSize: 13,
-    color: '#64748B',
-    marginBottom: 18,
-    lineHeight: 18,
-  },
-  modalBtnRow: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    marginTop: 12,
-  },
-  btnCancelModal: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    marginRight: 8,
-  },
-  btnCancelText: {
-    color: '#64748B',
-    fontWeight: 'bold',
-    fontSize: 13,
-  },
-  btnSendModal: {
-    backgroundColor: '#0B579D',
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 10,
-  },
-  btnSendText: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-    fontSize: 13,
-  },
+  card: { backgroundColor: '#FFFFFF', borderRadius: 20, padding: 20, elevation: 4 },
+  selectedRoleBadge: { backgroundColor: '#EFF6FF', padding: 12, borderRadius: 10, marginBottom: 18, borderWidth: 1, borderColor: '#BFDBFE', alignItems: 'center' },
+  selectedRoleText: { color: '#1D4ED8', fontWeight: 'bold', fontSize: 14 },
+  label: { fontSize: 14, fontWeight: 'bold', color: '#334155', marginBottom: 6 },
+  input: { borderWidth: 1.5, borderColor: '#CBD5E1', borderRadius: 12, paddingHorizontal: 14, paddingVertical: 12, fontSize: 15, marginBottom: 16, backgroundColor: '#F8FAFC', color: '#0F172A' },
+  passwordContainer: { flexDirection: 'row', alignItems: 'center', borderWidth: 1.5, borderColor: '#CBD5E1', borderRadius: 12, backgroundColor: '#F8FAFC', marginBottom: 20, paddingRight: 6 },
+  passwordInput: { flex: 1, paddingHorizontal: 14, paddingVertical: 12, fontSize: 15, color: '#0F172A' },
+  eyeButton: { paddingHorizontal: 10, paddingVertical: 8, backgroundColor: '#E2E8F0', borderRadius: 8 },
+  eyeButtonText: { fontSize: 12, fontWeight: 'bold', color: '#0B579D' },
+  btnLogin: { backgroundColor: '#0B579D', paddingVertical: 16, borderRadius: 12, alignItems: 'center', elevation: 2 },
+  btnLoginText: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 15, letterSpacing: 0.5 },
+  registerContainer: { marginTop: 18, alignItems: 'center', paddingTop: 14, borderTopWidth: 1, borderTopColor: '#F1F5F9' },
+  registerLabel: { fontSize: 13, color: '#64748B' },
+  registerLink: { fontSize: 14, fontWeight: 'bold', color: '#0284C7', marginTop: 4 },
 });

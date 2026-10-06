@@ -13,11 +13,11 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { supabase } from '../../config/supabase';
 
-export default function SetupScreen({ onSetupComplete }) {
+export default function SetupScreen({ onSetupComplete, navigation }) {
   // State 3 Kolom Input
-  const [rtCode, setRtCode] = useState(''); // Murni Angka (misal: 005)
-  const [rwCode, setRwCode] = useState(''); // Murni Angka (misal: 012)
-  const [villageCode, setVillageCode] = useState(''); // Kode Unik Pengurus (misal: KEDIP2026)
+  const [rtCode, setRtCode] = useState('');
+  const [rwCode, setRwCode] = useState(''); 
+  const [villageCode, setVillageCode] = useState('');
 
   const [loading, setLoading] = useState(false);
 
@@ -35,7 +35,6 @@ export default function SetupScreen({ onSetupComplete }) {
     const cleanRw = rwCode.trim();
     const cleanUniqueCode = villageCode.trim().toUpperCase();
 
-    // Format Full Tenant Code (contoh: RT005-RW012-KEDIP2026)
     const formattedTenantCode = `RT${cleanRt}-RW${cleanRw}-${cleanUniqueCode}`;
 
     setLoading(true);
@@ -58,13 +57,6 @@ export default function SetupScreen({ onSetupComplete }) {
         if (data && data.status === 'ACTIVE') {
           isExistingInDb = true;
         }
-      }
-
-      // Simulasi Fallback Verifikasi (Abaikan jika tabel Supabase sudah terisi)
-      // Menjamin kode unik pengurus terverifikasi
-      if (!isExistingInDb) {
-        // Pengecekan manual tambahan jika Supabase belum terhubung
-        console.log('Wilayah memicu validasi database...');
       }
 
       setLoading(false);
@@ -93,30 +85,31 @@ export default function SetupScreen({ onSetupComplete }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F3F6FA" />
+      <StatusBar barStyle="light-content" backgroundColor="#0B579D" />
+
+      {/* Frame Header Modern Melengkung di Bawah */}
+      <View style={styles.headerFrame}>
+        <Text style={styles.mainTitle}>Pengaturan Wilayah RT</Text>
+        <Text style={styles.subtitleDescription}>
+          Masukkan Nomor RT, RW, dan Kode Unik Wilayah yang dibuat oleh pengurus lingkungan Anda.
+        </Text>
+      </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         
-        {/* Header Visual */}
-        <View style={styles.headerContainer}>
-          <Text style={styles.logoIcon}>⚙️</Text>
-          <Text style={styles.mainTitle}>Pengaturan Wilayah RT</Text>
-          <Text style={styles.subtitleDescription}>
-            Masukkan Nomor RT, RW, dan Kode Unik Wilayah yang dibuat oleh pengurus lingkungan Anda.
-          </Text>
-        </View>
-
         {/* Card Form 3 Kolom */}
         <View style={styles.card}>
           <Text style={styles.label}>Masukkan Kode Akses Wilayah:</Text>
 
+          {/* Barisan 3 Kolom yang Dipusatkan Sempurna */}
           <View style={styles.threeColumnRow}>
             {/* Kolom 1: RT (HANYA ANGKA) */}
             <View style={styles.columnBox}>
               <Text style={styles.columnLabel}>RT</Text>
               <TextInput
                 style={styles.columnInput}
-                placeholder=" "
+                placeholder="00"
+                placeholderTextColor="#94A3B8"
                 value={rtCode}
                 onChangeText={(text) => {
                   const cleaned = text.replace(/[^0-9]/g, '');
@@ -138,7 +131,8 @@ export default function SetupScreen({ onSetupComplete }) {
               <TextInput
                 ref={rwInputRef}
                 style={styles.columnInput}
-                placeholder=" "
+                placeholder="00"
+                placeholderTextColor="#94A3B8"
                 value={rwCode}
                 onChangeText={(text) => {
                   const cleaned = text.replace(/[^0-9]/g, '');
@@ -155,12 +149,13 @@ export default function SetupScreen({ onSetupComplete }) {
             <Text style={styles.separator}>-</Text>
 
             {/* Kolom 3: Kode Unik Pengurus DB */}
-            <View style={[styles.columnBox, { flex: 1.4 }]}>
-              <Text style={styles.columnLabel}>KODE UNIK PENGURUS</Text>
+            <View style={[styles.columnBox, styles.columnBoxWide]}>
+              <Text style={styles.columnLabel}>KODE UNIK</Text>
               <TextInput
                 ref={villageInputRef}
                 style={styles.columnInput}
-                placeholder="KODE RT"
+                placeholder="KODE"
+                placeholderTextColor="#94A3B8"
                 value={villageCode}
                 onChangeText={(text) => {
                   const cleaned = text.toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -181,12 +176,22 @@ export default function SetupScreen({ onSetupComplete }) {
           )}
 
           {/* Tombol Simpan & Cek Database */}
-          <TouchableOpacity style={styles.btnSubmit} onPress={handleSaveSetup} disabled={loading}>
+          <TouchableOpacity style={styles.btnSubmit} onPress={handleSaveSetup} activeOpacity={0.8} disabled={loading}>
             {loading ? (
               <ActivityIndicator color="#FFFFFF" size="small" />
             ) : (
               <Text style={styles.btnSubmitText}>VERIFIKASI & HUBUNGKAN KODE</Text>
             )}
+          </TouchableOpacity>
+
+          {/* Tombol Khusus Ketua RT / Pengurus Baru */}
+          <TouchableOpacity 
+            style={styles.rtHelpButton} 
+            onPress={() => navigation.navigate('CreateTenant')}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.rtHelpText}>Belum punya kode wilayah?</Text>
+            <Text style={styles.rtActionLink}>Buat Wilayah RT Baru di Sini</Text>
           </TouchableOpacity>
         </View>
 
@@ -208,142 +213,164 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F3F6FA',
   },
-  scrollContent: {
-    padding: 24,
-    justifyContent: 'center',
-    flexGrow: 1,
-  },
-  headerContainer: {
+  headerFrame: {
+    backgroundColor: '#0B579D',
+    paddingHorizontal: 24,
+    paddingTop: 32,
+    paddingBottom: 28,
     alignItems: 'center',
-    marginBottom: 24,
-  },
-  logoIcon: {
-    fontSize: 48,
-    marginBottom: 12,
+    borderBottomLeftRadius: 28,
+    borderBottomRightRadius: 28,
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
   },
   mainTitle: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#0B579D',
+    color: '#FFFFFF',
     textAlign: 'center',
+    marginBottom: 8,
   },
   subtitleDescription: {
-    fontSize: 13,
-    color: '#64748B',
+    fontSize: 15,
+    color: '#E0F2FE',
     textAlign: 'center',
-    marginTop: 8,
-    lineHeight: 18,
+    lineHeight: 22,
     paddingHorizontal: 10,
   },
-
+  scrollContent: {
+    padding: 20,
+    paddingTop: 24,
+    paddingBottom: 40,
+    flexGrow: 1,
+  },
   card: {
     backgroundColor: '#FFFFFF',
     borderRadius: 20,
-    padding: 20,
-    elevation: 3,
+    padding: 24,
+    elevation: 4,
     shadowColor: '#000',
-    shadowOpacity: 0.06,
-    shadowRadius: 8,
+    shadowOpacity: 0.08,
+    shadowRadius: 10,
+    marginTop: 150,
   },
   label: {
-    fontSize: 12,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#334155',
-    marginBottom: 12,
+    marginBottom: 16,
+    textAlign: 'center',
   },
-
-  /* Styling 3 Kolom Input */
   threeColumnRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: 16,
+    justifyContent: 'center',
+    marginBottom: 20,
   },
   columnBox: {
-    flex: 1,
+    width: 65,
+  },
+  columnBoxWide: {
+    width: 110,
   },
   columnLabel: {
-    fontSize: 8,
+    fontSize: 13,
     fontWeight: 'bold',
     color: '#0284C7',
-    marginBottom: 4,
+    marginBottom: 8,
     textAlign: 'center',
     letterSpacing: 0.5,
   },
   columnInput: {
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: '#CBD5E1',
     borderRadius: 12,
-    paddingVertical: 12,
+    paddingVertical: 16,
     paddingHorizontal: 4,
-    fontSize: 12,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#F8FAFC',
     color: '#0F172A',
   },
   separator: {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#94A3B8',
-    marginHorizontal: 4,
-    marginTop: 14,
+    marginHorizontal: 10,
+    marginTop: 20,
   },
-
-  /* Preview Container */
   previewContainer: {
     backgroundColor: '#E0F2FE',
     borderRadius: 12,
-    padding: 12,
+    padding: 16,
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 24,
     borderWidth: 1,
     borderColor: '#BAE6FD',
   },
   previewLabel: {
-    fontSize: 10,
+    fontSize: 13,
     color: '#0369A1',
     fontWeight: 'bold',
-    marginBottom: 2,
+    marginBottom: 4,
   },
   previewCodeText: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#0284C7',
     letterSpacing: 1,
   },
-
   btnSubmit: {
     backgroundColor: '#0B579D',
-    paddingVertical: 14,
+    paddingVertical: 18,
     borderRadius: 12,
     alignItems: 'center',
+    elevation: 2,
   },
   btnSubmitText: {
     color: '#FFFFFF',
     fontWeight: 'bold',
-    fontSize: 12,
+    fontSize: 16,
     letterSpacing: 0.5,
   },
-
+  rtHelpButton: {
+    marginTop: 20,
+    alignItems: 'center',
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: '#F1F5F9',
+  },
+  rtHelpText: {
+    fontSize: 14,
+    color: '#64748B',
+  },
+  rtActionLink: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#0284C7',
+    marginTop: 4,
+  },
   warningBox: {
     flexDirection: 'row',
     backgroundColor: '#FFFBEB',
     borderWidth: 1,
     borderColor: '#FDE68A',
-    borderRadius: 12,
-    padding: 12,
-    marginTop: 20,
+    borderRadius: 16,
+    padding: 16,
+    marginTop: 24,
     alignItems: 'center',
   },
   warningIcon: {
-    fontSize: 18,
-    marginRight: 10,
+    fontSize: 22,
+    marginRight: 12,
   },
   warningText: {
     flex: 1,
-    fontSize: 11,
+    fontSize: 14,
     color: '#B45309',
-    lineHeight: 16,
+    lineHeight: 20,
   },
 });

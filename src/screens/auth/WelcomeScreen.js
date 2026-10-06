@@ -32,7 +32,7 @@ export default function WelcomeScreen({ onStart }) {
           >
             <Text style={styles.arrowIcon}>➔</Text>
           </TouchableOpacity>
-          <Text style={styles.buttonLabel}>Masuk ke Pengaturan Wilayah</Text>
+          <Text style={styles.buttonLabel}>Tap Untuk Mulai Masuk</Text>
         </View>
 
         {/* Footer Info */}
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 20,
   },
   logoCircle: {
     width: 100,
@@ -72,13 +72,13 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
-    marginBottom: 20,
+    marginBottom: 30,
   },
   logoIcon: {
-    fontSize: 48,
+    fontSize: 60,
   },
   appTitle: {
-    fontSize: 28,
+    fontSize: 40,
     fontWeight: 'bold',
     color: '#FFFFFF',
     letterSpacing: 2,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   buttonLabel: {
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: '600',
     marginTop: 14,
   },
@@ -126,6 +126,6 @@ const styles = StyleSheet.create({
   },
   footerText: {
     color: '#93C5FD',
-    fontSize: 11,
+    fontSize:10,
   },
 });
