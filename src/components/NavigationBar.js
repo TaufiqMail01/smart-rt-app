@@ -3,17 +3,18 @@ import { StyleSheet, View, Text, TouchableOpacity, SafeAreaView } from 'react-na
 
 import HomeScreen from '../screens/warga/HomeScreen';
 import ReportScreen from '../screens/warga/ReportScreen';
-import SatpamScannerScreen from '../screens/satpam/SatpamScannerScreen';
+import SecurityDashboardScreen from '../screens/satpam/SecurityDashboardScreen';
 import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';
 
 export default function NavigationBar({ user, tenantCode, navigation, onLogout }) {
   const userRole = user?.role ? user.role.toLowerCase().trim() : 'warga';
 
+  // Jika role satpam, default tab aktifnya adalah 'SatpamHome' (atau Anda bisa sesuaikan)
   const [activeTab, setActiveTab] = useState(
-    userRole === 'satpam' ? 'Satpam' : userRole === 'admin_rt' ? 'Admin' : 'Home'
+    userRole === 'satpam' ? 'SatpamHome' : userRole === 'admin_rt' ? 'Admin' : 'Home'
   );
 
-  // Fungsi Keluar Langsung (Tanpa Alert bawaan yang sering macet di beberapa device)
+  // Fungsi Keluar Langsung
   const handleDirectLogout = () => {
     if (onLogout) {
       onLogout();
@@ -26,13 +27,14 @@ export default function NavigationBar({ user, tenantCode, navigation, onLogout }
         return <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
       case 'Aduan':
         return <ReportScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
-      case 'Satpam':
-        return <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
+      case 'SatpamHome':
+        // Di sini kita arahkan ke SecurityDashboardScreen, di mana di dalamnya sudah ada sub-tab Beranda & Pos Jaga
+        return <SecurityDashboardScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
       case 'Admin':
         return <AdminDashboardScreen user={user} tenantCode={tenantCode} navigation={navigation} />;
       default:
         return userRole === 'satpam' ? (
-          <SatpamScannerScreen user={user} tenantCode={tenantCode} navigation={navigation} />
+          <SecurityDashboardScreen user={user} tenantCode={tenantCode} navigation={navigation} />
         ) : (
           <HomeScreen user={user} tenantCode={tenantCode} navigation={navigation} />
         );
@@ -51,15 +53,19 @@ export default function NavigationBar({ user, tenantCode, navigation, onLogout }
         <View style={styles.navBar}>
           
           {userRole === 'satpam' ? (
-            <TouchableOpacity 
-              style={styles.navItem} 
-              onPress={() => setActiveTab('Satpam')}
-              activeOpacity={0.7}
-            >
-              <Text style={[styles.navIcon, activeTab === 'Satpam' && styles.activeText]}>🛡️</Text>
-              <Text style={[styles.navLabel, activeTab === 'Satpam' && styles.activeText]}>Pos Jaga</Text>
-            </TouchableOpacity>
+            // Navigasi Bawah Khusus Satpam (Beranda & Pos Jaga)
+            <>
+              <TouchableOpacity 
+                style={styles.navItem} 
+                onPress={() => setActiveTab('SatpamHome')}
+                activeOpacity={0.7}
+              >
+                <Text style={[styles.navIcon, activeTab === 'SatpamHome' && styles.activeText]}>🛡️</Text>
+                <Text style={[styles.navLabel, activeTab === 'SatpamHome' && styles.activeText]}>Beranda</Text>
+              </TouchableOpacity>
+            </>
           ) : (
+            // Navigasi Warga / Admin
             <>
               <TouchableOpacity 
                 style={styles.navItem} 
@@ -82,11 +88,11 @@ export default function NavigationBar({ user, tenantCode, navigation, onLogout }
               {userRole === 'admin_rt' && (
                 <TouchableOpacity 
                   style={styles.navItem} 
-                  onPress={() => setActiveTab('Satpam')}
+                  onPress={() => setActiveTab('SatpamHome')}
                   activeOpacity={0.7}
                 >
-                  <Text style={[styles.navIcon, activeTab === 'Satpam' && styles.activeText]}>📷</Text>
-                  <Text style={[styles.navLabel, activeTab === 'Satpam' && styles.activeText]}>Pos Jaga</Text>
+                  <Text style={[styles.navIcon, activeTab === 'SatpamHome' && styles.activeText]}>📷</Text>
+                  <Text style={[styles.navLabel, activeTab === 'SatpamHome' && styles.activeText]}>Pos Jaga</Text>
                 </TouchableOpacity>
               )}
 
@@ -103,7 +109,7 @@ export default function NavigationBar({ user, tenantCode, navigation, onLogout }
             </>
           )}
 
-          {/* Tombol Keluar / Logout Langsung */}
+          {/* Tombol Keluar / Logout */}
           <TouchableOpacity 
             style={styles.navItem} 
             onPress={handleDirectLogout}
